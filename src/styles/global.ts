@@ -11,14 +11,7 @@ export const globalStyle = css`
     --color-text-primary: #1d1c24;
     --color-text-secondary: #848894;
     --color-text-description: #6a6a6a;
-    --color-text-price: #dd2525;
     --color-text-flex: var(--color-background);
-    --price-level-0: #4f8bff;
-    --price-level-1: #32b038;
-    --price-level-2: #2a952e;
-    --price-level-3: #227d26;
-    --price-level-4: #154d17;
-    --price-level-5: #e9b738;
     --color-flex: var(--price-level-5);
   }
   @font-face {
