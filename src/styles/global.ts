@@ -7,6 +7,7 @@ export const globalStyle = css`
     --color-primary: #4cb050;
     --color-primary-darker: #39933d;
     --color-border: #e2e3eb;
+    --color-brand: rgba(144, 188, 85);
     --color-background: #f7f7f7;
     --color-text-primary: #1d1c24;
     --color-text-secondary: #848894;
@@ -14,11 +15,7 @@ export const globalStyle = css`
     --color-text-flex: var(--color-background);
     --color-flex: var(--price-level-5);
   }
-  @font-face {
-    font-family:  'Pretendard', 'sans-serif',
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-      format('woff');
-  }
+
   * {
     box-sizing: border-box;
     font-family: 'Pretendard';
@@ -29,7 +26,7 @@ export const globalStyle = css`
   }
   body {
     font-size: 1.6rem;
-    font-weight: 400;
+    font-weight: 700;
     font-family: 'Pretendard';
     letter-spacing: -0.05rem;
     color: var(--color-text-primary);
