@@ -1,11 +1,9 @@
 import React, { NextPage } from 'next';
-import { useState } from 'react';
 
 import * as S from './Home/styled';
-import { Margin, SettingCenter } from '../styles/common/styled';
+import { Margin } from '../styles/common/styled';
 
 const HomePage: NextPage = () => {
-  const [Content, setContent] = useState(true);
   return (
     <S.HomePageContainer>
       <S.SectionContainer2>
