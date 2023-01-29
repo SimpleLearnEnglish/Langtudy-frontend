@@ -4,8 +4,7 @@ Add Code | Motify Code : 🔨
 <br />
 Issue Solve : ✅
 <br />
-Issue : 🔺  
-<br />
+Issue : 🔺
 style : 👔
 <br />
 File Structure : 📁
