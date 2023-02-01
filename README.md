@@ -2,7 +2,7 @@
 <br />
 Feature : ✨
 <br />
-Add Code | Motify Code : 🔨
+Add Code | Motdify Code : 🔨
 <br />
 Issue Solve : ✅
 <br />
