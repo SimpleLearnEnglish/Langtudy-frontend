@@ -1,6 +1,6 @@
 import React, { NextPage } from 'next';
 
-import * as S from './Home/styled';
+import * as S from './styled';
 import { Margin } from '../styles/common/styled';
 
 const HomePage: NextPage = () => {
