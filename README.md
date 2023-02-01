@@ -1,5 +1,7 @@
 <h1>Commit Emoji</h1>
 <br />
+Feature : ✨
+<br />
 Add Code | Motify Code : 🔨
 <br />
 Issue Solve : ✅
