@@ -3,6 +3,8 @@ import Navbar from '../common/Header/Navbar';
 import * as S from './styled';
 import Menu from '../common/Header/Menu';
 import { useRouter } from 'next/router';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '@/src/firebase';
 
 export interface LayoutTypes {
   children: React.ReactNode;
@@ -11,6 +13,7 @@ export interface LayoutTypes {
 const Layout: React.FC<LayoutTypes> = ({ children }) => {
   const Location = useRouter();
   const ShowHeaderBoolean = Location.pathname.split('/')[1];
+  const [user, loading, error] = useAuthState(auth);
   return (
     <>
       {ShowHeaderBoolean === 'auth' ? (
@@ -19,6 +22,7 @@ const Layout: React.FC<LayoutTypes> = ({ children }) => {
         <>
           <Navbar />
           <Menu
+            user={user}
             EasyUrl="/level/easy"
             NormalUrl="/level/normal"
             HardUrl="/level/hard"
