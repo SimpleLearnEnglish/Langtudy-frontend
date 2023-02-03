@@ -9,11 +9,11 @@ export const horizontalContainer = styled.div`
   }
 `;
 
-export const horizontalLineLeft = styled.div<{ MarginLeft: number }>`
+export const horizontalLineLeft = styled.div<{ marginleft: number }>`
   height: 0.1rem;
   width: 15rem;
   background: rgba(0, 0, 0, 0.15);
-  margin-left: ${(props) => props.MarginLeft}rem;
+  margin-left: ${(props) => props.marginleft}rem;
   margin-top: 0.8rem;
   @media screen and (max-width: 768px) {
     padding-left: 15rem;
@@ -41,9 +41,9 @@ export const OtherOptionContainer = styled.div`
   margin-top: 1rem;
 `;
 
-export const OtherOptionText = styled(Link)<{ MarginLeft: number }>`
+export const OtherOptionText = styled(Link)<{ marginleft: number }>`
   width: 11rem;
-  margin-left: ${(props) => props.MarginLeft}rem;
+  margin-left: ${(props) => props.marginleft}rem;
   font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.65);
   user-select: none;

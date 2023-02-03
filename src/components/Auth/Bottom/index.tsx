@@ -15,12 +15,12 @@ export const AuthBottom: React.FC<GoToAuth> = ({
   return (
     <>
       <S.horizontalContainer>
-        <S.horizontalLineLeft MarginLeft={StyledMarinLeft} />
+        <S.horizontalLineLeft marginleft={StyledMarinLeft} />
         <S.horizontalText>or</S.horizontalText>
         <S.horizontalLineRight />
       </S.horizontalContainer>
       <S.OtherOptionContainer>
-        <S.OtherOptionText MarginLeft={StyledMarinLeft} href={AuthLink}>
+        <S.OtherOptionText marginleft={StyledMarinLeft} href={AuthLink}>
           {YouHave}
         </S.OtherOptionText>
       </S.OtherOptionContainer>
