@@ -5,6 +5,7 @@ import { Margin } from '../styles/common/styled';
 
 const HomePage: NextPage = () => {
   const list = ['영어', '일본어'];
+
   return (
     <S.HomePageContainer>
       <S.SectionContainer2>

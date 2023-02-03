@@ -8,7 +8,7 @@ export const globalStyle = css`
     --color-primary-darker: #39933d;
     --color-border: #e2e3eb;
     --color-brand: rgba(144, 188, 85);
-    --color-background: #f7f7f7;
+    --color-background: #f4f4f4;
     --color-text-primary: #1d1c24;
     --color-text-secondary: #848894;
     --color-text-description: #6a6a6a;
