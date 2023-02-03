@@ -20,3 +20,31 @@ export const Center = styled.div`
 
   margin-left: 10rem;
 `;
+
+export const LoginButton = styled.button`
+  width: 34.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(153, 255, 116, 0.4);
+
+  :hover {
+    background-color: rgba(153, 255, 116, 0.6);
+  }
+  border-radius: 0.6rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 3.5rem;
+  margin-left: 4rem;
+`;
+export const LoginForm = styled.form``;
+
+export const LoginPosition = styled.div`
+  margin-top: 6.5rem;
+`;
+
+export const LostPw = styled.button`
+  border: none;
+  color: blue;
+  background-color: #ffffff;
+`;
