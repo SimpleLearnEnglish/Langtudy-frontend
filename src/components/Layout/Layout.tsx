@@ -18,7 +18,14 @@ const Layout: React.FC<LayoutTypes> = ({ children }) => {
       ) : (
         <>
           <Navbar />
-          <Menu LoginUrl="/auth/login" RegisterUrl="/auth/register" />
+          <Menu
+            EasyUrl="/level/easy"
+            NormalUrl="/level/normal"
+            HardUrl="/level/hard"
+            LoginUrl="/auth/login"
+            RegisterUrl="/auth/register"
+            PageType={ShowHeaderBoolean}
+          />
         </>
       )}
       {children}
