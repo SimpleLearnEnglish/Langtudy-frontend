@@ -25,3 +25,25 @@ export const RegisteradAdjustment = styled.div`
     margin-left: 30vw;
   }
 `;
+
+export const RegisterButton = styled.button`
+  width: 34.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(153, 255, 116, 0.4);
+
+  :hover {
+    background-color: rgba(153, 255, 116, 0.6);
+  }
+  border-radius: 0.6rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 3.5rem;
+`;
+export const ErrorMessage = styled.div`
+  margin-top: 1rem;
+  color: #ff5656;
+  font-size: 1.5rem;
+`;
+export const RegisterForm = styled.form``;
