@@ -13,7 +13,7 @@ export const RegisterTitle = styled.div`
 `;
 
 export const RegisterDescription = styled.div`
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding-bottom: 5rem;
   color: rgba(0, 0, 0, 0.4);
   font-size: 1.6rem;

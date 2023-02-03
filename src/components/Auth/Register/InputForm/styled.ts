@@ -12,7 +12,7 @@ export const RegisterAuthContainer = styled.div`
 `;
 
 export const RegisterInput = styled.input`
-  width: 80%;
+  width: 100%;
   border: none;
   background: none;
   font-weight: bold;
@@ -22,28 +22,11 @@ export const RegisterInput = styled.input`
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding: 1.5rem 0 1.5rem 2rem;
   outline: none;
-  margin-left: 1rem;
   ::placeholder {
     color: rgba(0, 0, 0, 0.3);
   }
-`;
-
-export const RegisterButton = styled.button`
-  width: 34.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border: none;
-  background: rgba(0, 255, 30, 0.2);
-  :hover {
-    background: rgba(0, 255, 30, 0.4);
-  }
-  border-radius: 0.6rem;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: 5rem;
 `;
 
 export const LoginLink = styled(Link)`
