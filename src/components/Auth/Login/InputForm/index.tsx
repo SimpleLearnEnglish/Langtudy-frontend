@@ -1,40 +1,31 @@
 import React from 'react';
 import * as S from './styled';
 
-export interface InputType {
-  setUserId: any;
-  setUserPw: any;
-  Login: any;
+export interface LoginInputType {
+  setData: any;
+  name: string;
+  type: string;
+  placeholder: string;
 }
 
-export const LoginInput: React.FC<InputType> = ({
-  setUserId,
-  setUserPw,
-  Login,
+export const LoginInput: React.FC<LoginInputType> = ({
+  setData,
+  name,
+  type,
+  placeholder,
 }) => {
   return (
     <>
-      <S.AuthContainerId>
-        <S.AuthId
-          placeholder="아이디"
-          type="text"
+      <S.AuthContainer>
+        <S.AuthInput
+          placeholder={placeholder}
+          name={name}
+          type={type}
           onChange={(event: any) => {
-            setUserId(event.target.value);
+            setData(event.target.value);
           }}
         />
-      </S.AuthContainerId>
-      <S.AuthContainerPw>
-        <S.AuthPw
-          placeholder="비밀번호"
-          type="password"
-          onChange={(event: any) => {
-            setUserPw(event.target.value);
-          }}
-        />
-      </S.AuthContainerPw>
-      <S.ButtonContainer>
-        <S.AuthButton onClick={Login}>로그인</S.AuthButton>
-      </S.ButtonContainer>
+      </S.AuthContainer>
     </>
   );
 };

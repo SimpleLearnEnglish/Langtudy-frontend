@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
-export const AuthContainerId = styled.div`
+export const AuthContainer = styled.div`
   width: 34.5rem;
   background: rgba(0, 0, 0, 0.04);
-  margin-top: 4.5rem;
+  margin-top: 1.2rem;
   margin-left: 4rem;
   border-radius: 0.6rem;
   &:focus-within {
@@ -14,22 +14,8 @@ export const AuthContainerId = styled.div`
   }
 `;
 
-export const AuthContainerPw = styled.div`
-  width: 34.5rem;
-  background: rgba(0, 0, 0, 0.04);
-  margin-top: 1.1rem;
-  margin-left: 4rem;
-  border-radius: 0.6rem;
-  &:focus-within {
-    background: rgba(0, 0, 0, 0.06);
-  }
-  @media screen and (max-width: 400px) {
-    margin: 2rem 0 0 2.2rem;
-  }
-`;
-
-export const AuthId = styled.input`
-  width: 80%;
+export const AuthInput = styled.input`
+  width: 100%;
   border: none;
   background: none;
   font-weight: bold;
@@ -39,30 +25,10 @@ export const AuthId = styled.input`
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+  padding-left: 2rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   outline: none;
-  margin-left: 1rem;
-  ::placeholder {
-    color: rgba(0, 0, 0, 0.3);
-  }
-`;
-
-export const AuthPw = styled.input`
-  width: 80%;
-  border: none;
-  background: none;
-  font-weight: bold;
-  border-radius: 0.6rem;
-  @media screen and (max-width: 768px) {
-    font-size: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  outline: none;
-  margin-left: 1rem;
   ::placeholder {
     color: rgba(0, 0, 0, 0.3);
   }

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const LoginMainContainer = styled.div`
   width: 70%;
   padding-top: 5rem;
-  margin-top: 15rem;
+  margin-top: 12rem;
   @media screen and (max-width: 400px) {
     margin: 0;
   }
@@ -23,7 +23,7 @@ export const LoginTitle = styled.div`
 `;
 
 export const LoginDescriptionContainer = styled.div`
-  margin-top: 2rem;
+  margin-top: 1rem;
 `;
 
 export const LoginDescription = styled.div`
