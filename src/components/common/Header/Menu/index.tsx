@@ -32,10 +32,7 @@ const Menu: React.FC<AuthLink> = ({
             <S.MenuLink href={NormalUrl}>보통</S.MenuLink>
             <S.MenuLink href={HardUrl}>어려움</S.MenuLink>
           </>
-        ) : (
-          <></>
-        )}
-        {user ? (
+        ) : user ? (
           <S.Logout onClick={() => signOut(auth)}>로그아웃</S.Logout>
         ) : (
           <>
