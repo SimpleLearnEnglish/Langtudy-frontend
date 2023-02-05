@@ -28,20 +28,17 @@ const Menu: React.FC<AuthLink> = ({
       <S.Menus PageUrl={PageType}>
         {PageType === 'level' ? (
           <>
-            <S.MenuLink href={EasyUrl}>쉬움</S.MenuLink>
-            <S.MenuLink href={NormalUrl}>보통</S.MenuLink>
-            <S.MenuLink href={HardUrl}>어려움</S.MenuLink>
+            <S.LevelLink href={EasyUrl}>쉬움</S.LevelLink>
+            <S.LevelLink href={NormalUrl}>보통</S.LevelLink>
+            <S.LevelLink href={HardUrl}>어려움</S.LevelLink>
           </>
-        ) : (
-          <></>
-        )}
-        {user ? (
+        ) : user ? (
           <S.Logout onClick={() => signOut(auth)}>로그아웃</S.Logout>
         ) : (
-          <>
-            <S.MenuLink href={LoginUrl}>로그인</S.MenuLink> |
-            <S.MenuLink href={RegisterUrl}> 회원가입</S.MenuLink>
-          </>
+          <S.AuthContainer>
+            <S.AuthLink href={LoginUrl}>로그인</S.AuthLink> |
+            <S.AuthLink href={RegisterUrl}> 회원가입</S.AuthLink>
+          </S.AuthContainer>
         )}
       </S.Menus>
     </S.MenuContainer>

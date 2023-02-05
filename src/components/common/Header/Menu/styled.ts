@@ -22,13 +22,28 @@ export const Menus = styled.div<{ PageUrl: string }>`
   font-weight: 600;
 `;
 
-export const MenuLink = styled(Link)`
+export const LevelLink = styled(Link)`
   font-weight: bold;
   text-decoration: none;
   color: black;
   font-size: 1.5rem;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
+`;
+
+export const AuthContainer = styled.div`
+  position: absolute;
+  right: 27%;
+  top: 30%;
+`;
+
+export const AuthLink = styled(Link)`
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 `;
 
 export const Logout = styled.div`
