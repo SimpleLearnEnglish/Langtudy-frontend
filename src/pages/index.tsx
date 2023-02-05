@@ -2,6 +2,7 @@ import React, { NextPage } from 'next';
 
 import * as S from './styled';
 import { Margin } from '../styles/common/styled';
+import { User } from 'firebase/auth';
 
 const HomePage: NextPage = () => {
   const list = ['영어', '일본어'];

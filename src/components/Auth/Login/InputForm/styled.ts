@@ -10,7 +10,7 @@ export const AuthContainer = styled.div`
     background: rgba(0, 0, 0, 0.06);
   }
   @media screen and (max-width: 400px) {
-    margin: 5.5rem 0 0 2.2rem;
+    margin: 3rem 0 0 2.2rem;
   }
 `;
 
