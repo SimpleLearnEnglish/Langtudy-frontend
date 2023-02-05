@@ -1,6 +1,11 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
+export const BottomContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const horizontalContainer = styled.div`
   display: flex;
   margin-top: 1rem;
@@ -34,24 +39,5 @@ export const horizontalLineRight = styled.div`
   margin-top: 0.8rem;
   @media screen and (max-width: 768px) {
     padding-left: 15rem;
-  }
-`;
-
-export const OtherOptionContainer = styled.div`
-  margin-top: 1rem;
-`;
-
-export const OtherOptionText = styled(Link)<{ marginleft: number }>`
-  width: 11rem;
-  margin-left: ${(props) => props.marginleft}rem;
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.65);
-  user-select: none;
-  text-decoration: none;
-  @media screen and (max-width: 400px) {
-    margin: 0 0 032re;
-  }
-  :hover {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 `;
