@@ -21,16 +21,12 @@ const ResetPassword: React.FC<ResetPasswordProps> = ({
   const [error, setError] = useState('');
   const [sendPasswordResetEmail, sending, userError] =
     useSendPasswordResetEmail(auth);
-  const OnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const OnSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (error) setError('');
-    if (userError) {
-      setError('이메일이 존재하지 않습니다.');
-      return;
+    if (error) {
+      setError('');
     }
-    //error handler 구현할곳
-    sendPasswordResetEmail(email);
-    setSuccess(true);
+    setSuccess(await sendPasswordResetEmail(email));
   };
 
   return (
