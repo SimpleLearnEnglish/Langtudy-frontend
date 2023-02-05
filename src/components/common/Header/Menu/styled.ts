@@ -14,10 +14,11 @@ export const MenuContainer = styled.div`
 `;
 
 export const Menus = styled.div<{ PageUrl: string }>`
-  margin-left: ${(props) => (props.PageUrl === 'level' ? 'auto' : '0')};
-  margin-right: ${(props) => (props.PageUrl === 'level' ? 'auto' : '1rem')};
+  width: 80%;
   margin-top: auto;
+  margin-right: ${(props) => (props.PageUrl === 'level' ? 'auto' : '0')};
   margin-bottom: auto;
+  margin-left: ${(props) => (props.PageUrl === 'level' ? 'auto' : '0')};
   font-size: 1.5rem;
   font-weight: 600;
 `;
@@ -31,10 +32,8 @@ export const LevelLink = styled(Link)`
   margin-left: 0.5rem;
 `;
 
-export const AuthContainer = styled.div`
-  position: absolute;
-  right: 27%;
-  top: 30%;
+export const RightContainer = styled.div`
+  float: right;
 `;
 
 export const AuthLink = styled(Link)`
