@@ -23,6 +23,7 @@ const LoginPage: React.FC = () => {
   const handleClose = () =>
     setModalState((prev) => ({
       ...prev,
+      view: 'default',
       open: false,
     }));
 
@@ -33,9 +34,6 @@ const LoginPage: React.FC = () => {
   const OnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (formError) setFormError('');
-    if (userEmail.includes('@')) {
-      return setFormError('이메일 혹은 비밀번호가 틀립니다.');
-    }
     signInWithEmailAndPassword(userEmail, userPw);
   };
 
@@ -49,6 +47,7 @@ const LoginPage: React.FC = () => {
   if (user) {
     router.push('/');
   }
+  console.log(userError?.message);
   return (
     <S.LoginBackground>
       <S.Center>
@@ -93,7 +92,7 @@ const LoginPage: React.FC = () => {
           비밀빈호 초기화
         </S.LostPw>
         {modalState.view === 'resetPassword' ? (
-          <ResetPassword toggleView={toggleView} />
+          <ResetPassword handleClose={handleClose} toggleView={toggleView} />
         ) : (
           <></>
         )}

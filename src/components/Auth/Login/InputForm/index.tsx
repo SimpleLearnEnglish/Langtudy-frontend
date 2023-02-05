@@ -18,6 +18,7 @@ export const LoginInput: React.FC<LoginInputType> = ({
     <>
       <S.AuthContainer>
         <S.AuthInput
+          required
           placeholder={placeholder}
           name={name}
           type={type}
