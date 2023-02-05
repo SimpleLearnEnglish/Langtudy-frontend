@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import * as S from './styled';
 import { Register, RegisterInput } from '@/src/components/Auth/Register';
 import { AuthBottom } from '@/src/components/Auth/Bottom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from 'react-firebase-hooks/auth';
 import { auth } from '@/src/firebase';
 import { FIREBASE_ERRORS } from '@/src/firebase';
 import { SocialButton } from '@/src/components/Auth';
@@ -13,6 +16,7 @@ const RegisterPage: React.FC = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
   //use
 
   const [createUserWithEmailAndPassword, user, loading, userError] =
@@ -61,11 +65,12 @@ const RegisterPage: React.FC = () => {
               ]}
           </S.ErrorMessage>
           <S.RegisterButton type="submit">가입</S.RegisterButton>
-          <AuthBottom
-            AuthLink={'/auth/login'}
-            YouHave={'로그인'}
-            StyledMarinLeft={0}
-          />
+          <AuthBottom StyledMarinLeft={0} />
+          <S.OtherOptionContainer>
+            <S.OtherOptionText href={'/auth/login'}>
+              로그인 하러 가기
+            </S.OtherOptionText>
+          </S.OtherOptionContainer>
         </S.RegisterForm>
         <SocialButton
           SocialName="구글로 회원가입"

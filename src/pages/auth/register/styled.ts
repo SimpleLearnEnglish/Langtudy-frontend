@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
 export const RegisterBackground = styled.div`
   background-color: #fff;
@@ -47,3 +48,24 @@ export const ErrorMessage = styled.div`
   font-size: 1.5rem;
 `;
 export const RegisterForm = styled.form``;
+
+export const OtherOptionContainer = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
+export const OtherOptionText = styled(Link)`
+  width: 11rem;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 2.7rem;
+  user-select: none;
+  text-decoration: none;
+  @media screen and (max-width: 400px) {
+    margin: 0 0 0 2rem;
+  }
+  :hover {
+    font-weight: 600;
+  }
+`;

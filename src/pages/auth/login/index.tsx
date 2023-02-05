@@ -4,14 +4,17 @@ import { LoginInput } from '@/src/components/Auth/Login/InputForm';
 import React, { useState } from 'react';
 
 import * as S from './styled';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from 'react-firebase-hooks/auth';
 import { FIREBASE_ERRORS, auth } from '@/src/firebase';
 import { ErrorMessage } from '../register/styled';
-import { useNavigate } from 'react-router-dom';
 import { useRouter } from 'next/router';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { authModalState } from '@/src/atoms/authModalAtom';
 import ResetPassword from '@/src/components/Modal/ResetPassword';
+import { SocialButton } from '@/src/components/Auth';
 
 const LoginPage: React.FC = () => {
   const setAuthModalState = useSetRecoilState(authModalState);
@@ -27,9 +30,9 @@ const LoginPage: React.FC = () => {
       open: false,
     }));
 
-  const [signInWithEmailAndPassword, user, loading, userError] =
+  const [signInWithEmailAndPassword, _, loading, userError] =
     useSignInWithEmailAndPassword(auth);
-
+  const [user, error] = useAuthState(auth);
   const router = useRouter();
   const OnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -47,7 +50,6 @@ const LoginPage: React.FC = () => {
   if (user) {
     router.push('/');
   }
-  console.log(userError?.message);
   return (
     <S.LoginBackground>
       <S.Center>
@@ -75,22 +77,30 @@ const LoginPage: React.FC = () => {
           </ErrorMessage>
           <S.LoginButton type="submit">로그인</S.LoginButton>
         </S.LoginForm>
-        <AuthBottom
-          AuthLink={'/auth/register'}
-          YouHave={'계정이 없으신가요?'}
-          StyledMarinLeft={4}
-        />
-        비밀번호를 잊어버리셨나요?
-        <S.LostPw
-          onClick={() =>
-            setAuthModalState((prev) => ({
-              ...prev,
-              view: 'resetPassword',
-            }))
-          }
-        >
-          비밀빈호 초기화
-        </S.LostPw>
+        <AuthBottom StyledMarinLeft={4} />
+        <S.OneLineFlex>
+          <S.OtherOptionText href={'/auth/register'}>
+            계정이 없으신가요?
+          </S.OtherOptionText>
+          <S.LostPw
+            onClick={() =>
+              setAuthModalState((prev) => ({
+                ...prev,
+                view: 'resetPassword',
+              }))
+            }
+          >
+            비밀빈호 초기화
+          </S.LostPw>
+        </S.OneLineFlex>
+        <S.PushMargin>
+          <SocialButton
+            SocialName="구글로 로그인"
+            ImgSrc="https://static.vecteezy.com/system/resources/previews/010/353/285/original/colourful-google-logo-on-white-background-free-vector.jpg"
+            Width={2.7}
+            Height={2.7}
+          />
+        </S.PushMargin>
         {modalState.view === 'resetPassword' ? (
           <ResetPassword handleClose={handleClose} toggleView={toggleView} />
         ) : (
