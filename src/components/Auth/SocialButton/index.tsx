@@ -21,7 +21,12 @@ export const SocialButton: React.FC<SocialProps> = ({
   return (
     <S.Button onClick={() => signInWithGoogle()} backgroundColor="#ffffff">
       <S.ButtonContainer>
-        <S.SocialImg src={ImgSrc} widthSize={Width} heightSize={Height} />
+        <S.SocialImg
+          alt="SocialImg"
+          src={ImgSrc}
+          widthSize={Width}
+          heightSize={Height}
+        />
         <S.ButtonText textColor="black">{SocialName}</S.ButtonText>
       </S.ButtonContainer>
     </S.Button>
