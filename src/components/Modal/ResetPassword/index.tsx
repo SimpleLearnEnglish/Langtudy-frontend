@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react';
+
+// modal
 import { ModalView, authModalState } from '../../../atoms/authModalAtom';
 import { useSetRecoilState } from 'recoil';
+
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { FIREBASE_ERRORS, auth } from '@/src/firebase';
 import * as S from './styled';
 import { ErrorMessage } from '@/src/pages/auth/register/styled';
 
 type ResetPasswordProps = {
-  toggleView: (view: ModalView) => void;
   handleClose: any;
 };
 
-const ResetPassword: React.FC<ResetPasswordProps> = ({
-  toggleView,
-  handleClose,
-}) => {
-  const setAuthModalState = useSetRecoilState(authModalState);
+const ResetPassword: React.FC<ResetPasswordProps> = ({ handleClose }) => {
   const [email, setEmail] = useState('');
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
