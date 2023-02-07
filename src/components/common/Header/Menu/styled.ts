@@ -21,6 +21,7 @@ export const Menus = styled.div<{ PageUrl: string }>`
   margin-left: ${(props) => (props.PageUrl === 'level' ? 'auto' : '0')};
   font-size: 1.5rem;
   font-weight: 600;
+  display: ${(props) => (props.PageUrl === 'level' ? 'flex' : '')};
 `;
 
 export const LevelLink = styled(Link)`
@@ -28,12 +29,16 @@ export const LevelLink = styled(Link)`
   text-decoration: none;
   color: black;
   font-size: 1.5rem;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+  margin-right: 3.2rem;
+  margin-left: 3.2rem;
 `;
 
 export const RightContainer = styled.div`
   float: right;
+`;
+
+export const LevelContentContainer = styled.div`
+  margin: auto;
 `;
 
 export const AuthLink = styled(Link)`
