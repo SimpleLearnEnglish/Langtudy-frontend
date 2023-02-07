@@ -11,12 +11,16 @@ import {
 import { FIREBASE_ERRORS, auth } from '@/src/firebase';
 import { ErrorMessage } from '../register/styled';
 import { useRouter } from 'next/router';
+
+//modal
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { authModalState } from '@/src/atoms/authModalAtom';
 import ResetPassword from '@/src/components/Modal/ResetPassword';
-import { SocialButton } from '@/src/components/Auth';
 
-const LoginPage: React.FC = () => {
+import { SocialButton } from '@/src/components/Auth';
+import { NextPage } from 'next';
+
+const LoginPage: NextPage = () => {
   const setAuthModalState = useSetRecoilState(authModalState);
   const [userEmail, setUserEmail] = useState('');
   const [userPw, setUserPw] = useState('');
@@ -40,13 +44,6 @@ const LoginPage: React.FC = () => {
     signInWithEmailAndPassword(userEmail, userPw);
   };
 
-  //toggle
-  const toggleView = (view: string) => {
-    setModalState({
-      ...modalState,
-      view: view as typeof modalState.view,
-    });
-  };
   if (user) {
     router.push('/');
   }
@@ -102,7 +99,7 @@ const LoginPage: React.FC = () => {
           />
         </S.PushMargin>
         {modalState.view === 'resetPassword' ? (
-          <ResetPassword handleClose={handleClose} toggleView={toggleView} />
+          <ResetPassword handleClose={handleClose} />
         ) : (
           <></>
         )}
