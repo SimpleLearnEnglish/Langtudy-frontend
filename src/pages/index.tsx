@@ -1,11 +1,28 @@
 import React, { NextPage } from 'next';
 
+//modal
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { authModalState } from '../atoms/authModalAtom';
+
 import * as S from './styled';
 import { Margin } from '../styles/common/styled';
 import { User } from 'firebase/auth';
+import ChooseLevel from '../components/Modal/ChooseLevel';
+import { useRouter } from 'next/router';
 
 const HomePage: NextPage = () => {
   const list = ['영어', '일본어'];
+  const setAuthModalState = useSetRecoilState(authModalState);
+  const [modalState, setModalState] = useRecoilState(authModalState);
+
+  const handleClose = () =>
+    setModalState((prev) => ({
+      ...prev,
+      view: 'default',
+      open: false,
+    }));
+
+  const router = useRouter();
 
   return (
     <S.HomePageContainer>
@@ -17,7 +34,14 @@ const HomePage: NextPage = () => {
               <S.Desc>단어, 문장, 블럭으로 공부해요.</S.Desc>
               <S.ContentListContainer>
                 <S.ContentC>
-                  <S.WordContent>
+                  <S.WordContent
+                    onClick={() =>
+                      setAuthModalState((prev) => ({
+                        ...prev,
+                        view: 'chooseLevel',
+                      }))
+                    }
+                  >
                     <S.ContentContainer>
                       <S.ContentTitle>단어 맞추기</S.ContentTitle>
                       <S.Illustration
@@ -34,7 +58,14 @@ const HomePage: NextPage = () => {
                     </S.ContentContainer>
                   </S.WordContent>
                   <Margin marginRem={0.5} />
-                  <S.SentenceContent>
+                  <S.SentenceContent
+                    onClick={() =>
+                      setAuthModalState((prev) => ({
+                        ...prev,
+                        view: 'chooseLevel',
+                      }))
+                    }
+                  >
                     <S.ContentContainer>
                       <S.ContentTitle>문장 맞추기</S.ContentTitle>
                       <S.Illustration
@@ -58,6 +89,11 @@ const HomePage: NextPage = () => {
           );
         })}
       </S.SectionContainer2>
+      {modalState.view === 'chooseLevel' ? (
+        <ChooseLevel handleClose={handleClose} moveRouter={router} />
+      ) : (
+        <></>
+      )}
     </S.HomePageContainer>
   );
 };
