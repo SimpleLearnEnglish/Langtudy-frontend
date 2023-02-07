@@ -9,3 +9,9 @@ export const Margin = styled.div<{ marginRem: number }>`
   margin-right: ${(props) => props.marginRem}rem;
   margin-left: ${(props) => props.marginRem}rem;
 `;
+
+export const ToggleCloseIcon = styled.button`
+  background: black;
+  color: white;
+  border: none;
+`;
