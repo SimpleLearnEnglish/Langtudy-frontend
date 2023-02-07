@@ -5,7 +5,7 @@ export interface AuthModalState {
   view: ModalView;
 }
 
-export type ModalView = 'default' | 'resetPassword';
+export type ModalView = 'default' | 'resetPassword' | 'chooseLevel';
 
 const defaultModalState: AuthModalState = {
   open: false,

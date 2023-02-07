@@ -10,8 +10,9 @@ import { auth } from '@/src/firebase';
 import { FIREBASE_ERRORS } from '@/src/firebase';
 import { SocialButton } from '@/src/components/Auth';
 import { useRouter } from 'next/router';
+import { NextPage } from 'next';
 
-const RegisterPage: React.FC = () => {
+const RegisterPage: NextPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
