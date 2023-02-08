@@ -21,6 +21,7 @@ export const LevelContainer = styled.div`
   overflow: hidden;
   background-color: #ffffff;
   display: flex;
+  flex-direction: column;
 `;
 export const LevelButtonContainer = styled.div`
   display: flex;
