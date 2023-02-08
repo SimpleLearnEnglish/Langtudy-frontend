@@ -2,16 +2,21 @@ import Level from '@/src/components/Template/Level';
 import { Easy, Normal, Hard } from 'src/components';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { useInfiniteQuery, useQuery } from 'react-query';
 
 import * as S from './styled';
+import { getEng } from '@/src/api';
 
 const LevelPage: React.FC = () => {
-  const Empty = '';
-
   //데이터 패칭해서 컴포넌트로 api 정보를 보냄
+  const [data, setData] = useState({
+    data: '',
+    data1: '',
+    data2: '',
+  });
   const router = useRouter();
   const id = router.query.id;
-
+  console.log(getEng().then((res) => res.easy[0].word));
   return (
     <S.LevelPageContainer>
       <S.LevelTextContainer>
