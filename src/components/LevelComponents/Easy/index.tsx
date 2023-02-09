@@ -4,14 +4,12 @@ import * as S from './styled';
 
 type EasyProps = {
   dataSets: any;
-  reb: boolean;
   answerClick: any;
   NextNum: number;
 };
 
 export const Easy: React.FC<EasyProps> = ({
   dataSets,
-  reb,
   answerClick,
   NextNum,
 }) => {

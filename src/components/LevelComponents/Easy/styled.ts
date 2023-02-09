@@ -6,7 +6,7 @@ export const EasyContainer = styled.div`
   border: 1px solid #0000001f;
   border-radius: 1.75rem;
   background-color: #ffffff;
-  margin: 3rem auto auto auto;
+  margin: 4rem auto auto auto;
 `;
 
 export const MeanContainer = styled.div`
