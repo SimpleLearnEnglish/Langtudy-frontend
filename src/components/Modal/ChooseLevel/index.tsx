@@ -18,13 +18,13 @@ const ChooseLevel: React.FC<ChooseLevelProps> = ({
     <S.LevelWarp>
       <S.LevelContainer>
         <S.LevelButtonContainer>
-          <S.EasyButton onClick={() => moveRouter.push('/level/easy')}>
+          <S.EasyButton onClick={() => moveRouter.push('/word/level/easy')}>
             <S.Text>쉬움</S.Text>
           </S.EasyButton>
-          <S.NormalButton onClick={() => moveRouter.push('/level/normal')}>
+          <S.NormalButton onClick={() => moveRouter.push('/word/level/normal')}>
             <S.Text>보통</S.Text>
           </S.NormalButton>
-          <S.HardButton onClick={() => moveRouter.push('/level/hard')}>
+          <S.HardButton onClick={() => moveRouter.push('/word/level/hard')}>
             <S.Text>어려움</S.Text>
           </S.HardButton>
         </S.LevelButtonContainer>
