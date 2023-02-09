@@ -14,5 +14,5 @@
   },
   "editor.formatOnSave": true,
   "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
-  "cSpell.words": ["Langtudy"]
+  "cSpell.words": ["Langtudy", "Toastify"]
 }

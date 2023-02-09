@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
       <S.NavbarContainer>
         <S.NavbarFormGroup>
           <S.Logo
+            alt="Langtudy Logo"
             src={
               'https://cdn.discordapp.com/attachments/1054718420651872266/1069210945441775657/Langtudy.png'
             }
