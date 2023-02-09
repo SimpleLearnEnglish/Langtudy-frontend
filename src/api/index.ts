@@ -1,4 +1,6 @@
-export const getEng = async (offset: string = 'easy') => {
-  const data = await (await fetch(`http://localhost:4000/db`)).json();
+import { Host, Port } from '@/host';
+
+export const getEng = async (offset: string) => {
+  const data = await (await fetch(`http://${Host}:${Port}/${offset}`)).json();
   return data;
 };
