@@ -6,7 +6,7 @@ export const HomePageContainer = styled.div`
   flex-direction: column;
   width: 100%;
   @media screen and (max-width: 768px) {
-    margin-top: 15rem;
+    margin-top: 20rem;
     display: flex;
     flex-direction: column;
   }
@@ -46,6 +46,7 @@ export const Illustration = styled.img<{
   Rotate: number;
 }>`
   width: ${(props) => props.WidthValue}rem;
+  height: 100%;
   margin-top: ${(props) => props.marginTop}rem;
   margin-bottom: ${(props) => props.marginBottom}rem;
   margin-right: ${(props) => props.marginRight}rem;
