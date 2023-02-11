@@ -9,21 +9,6 @@ export const Toastify = styled(ToastContainer)`
   }
 `;
 
-type ToastifyType = {
-  answer: boolean;
-};
-export const SnackBar: React.FC<ToastifyType> = ({ answer }) => {
-  useEffect(() => {
-    answer
-      ? toast.success(`정답입니다!`, {
-          autoClose: 2000,
-          position: toast.POSITION.BOTTOM_CENTER,
-        })
-      : toast.error(`정답이 아닙니다!`, {
-          autoClose: 2000,
-          position: toast.POSITION.BOTTOM_CENTER,
-        });
-  }, [answer]);
-
+export const SnackBar: React.FC = () => {
   return <Toastify />;
 };

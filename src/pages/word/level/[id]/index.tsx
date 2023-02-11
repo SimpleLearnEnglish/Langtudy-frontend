@@ -7,6 +7,7 @@ import * as S from './styled';
 import { getEng } from '@/src/api';
 import { SnackBar } from '@/src/components/common/Toastify';
 import { LoadingStyle } from '@/src/styles/common/styled';
+import { toast } from 'react-toastify';
 
 const LevelPage: React.FC = () => {
   //데이터 패칭해서 컴포넌트로 api 정보를 보냄
@@ -45,7 +46,6 @@ const LevelPage: React.FC = () => {
       setHard(v.hard);
     });
   }, []);
-  const [toToastify, setToToastify] = useState(false);
   const [onClicked, setOnClicked] = useState(false);
   const [QuizN, setQuizN] = useState(0);
 
@@ -56,9 +56,16 @@ const LevelPage: React.FC = () => {
       event === hard[QuizN].answer
     ) {
       setClickedObject(true);
-      setToToastify(true);
       setOnClicked(true);
+      toast.success('정답입니다!', {
+        autoClose: 2000,
+        position: toast.POSITION.BOTTOM_CENTER,
+      });
     } else {
+      toast.error('정답이 아닙니다!', {
+        autoClose: 2000,
+        position: toast.POSITION.BOTTOM_CENTER,
+      });
       setOnClicked(true);
       setClickedObject(false);
     }
@@ -73,7 +80,7 @@ const LevelPage: React.FC = () => {
   }, [level]);
   return (
     <S.LevelPageContainer>
-      {onClicked ? <SnackBar answer={clickedObject} /> : <></>}
+      {onClicked ? <SnackBar /> : <></>}
       <S.LevelTextContainer>
         난이도: {level === 'easy' ? <>쉬움</> : <></>}
         {level === 'normal' ? <>보통</> : <></>}
