@@ -15,3 +15,8 @@ export const ToggleCloseIcon = styled.button`
   color: white;
   border: none;
 `;
+
+export const LoadingStyle = styled.div`
+  text-align: center;
+  margin-top: 15rem;
+`;

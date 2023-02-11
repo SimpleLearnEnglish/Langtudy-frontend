@@ -18,10 +18,7 @@ export const globalStyle = css`
 
   * {
     box-sizing: border-box;
-  }
-  @font-face {
     font-family: 'Pretendard';
-    font-display: swap;
   }
   html {
     color: #fff;

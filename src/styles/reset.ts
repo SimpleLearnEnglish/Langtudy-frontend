@@ -102,7 +102,6 @@ export const reset = css`
   menu,
   nav,
   section {
-    display: block;
   }
   body {
     line-height: 1;

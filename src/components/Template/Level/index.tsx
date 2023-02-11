@@ -14,11 +14,11 @@ const Level: React.FC<LevelTemplateProps> = ({
   hard,
 }) => {
   return (
-    <div>
+    <>
       {LevelType === 'easy' ? easy : <></>}
       {LevelType === 'normal' ? normal : <></>}
       {LevelType === 'hard' ? hard : <></>}
-    </div>
+    </>
   );
 };
 
