@@ -5,6 +5,7 @@ import { AuthBottom } from '@/src/components/Auth/Bottom';
 import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
+  useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import { auth } from '@/src/firebase';
 import { FIREBASE_ERRORS } from '@/src/firebase';
@@ -35,6 +36,9 @@ const RegisterPage: NextPage = () => {
     createUserWithEmailAndPassword(email, password);
     router.push('/');
   };
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+
   return (
     <S.RegisterBackground>
       <S.RegisteradAdjustment>
@@ -78,6 +82,7 @@ const RegisterPage: NextPage = () => {
           ImgSrc="https://static.vecteezy.com/system/resources/previews/010/353/285/original/colourful-google-logo-on-white-background-free-vector.jpg"
           Width={2.7}
           Height={2.7}
+          SignGoogle={signInWithGoogle}
         />
       </S.RegisteradAdjustment>
     </S.RegisterBackground>

@@ -7,6 +7,7 @@ import * as S from './styled';
 import {
   useAuthState,
   useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import { FIREBASE_ERRORS, auth } from '@/src/firebase';
 import { ErrorMessage } from '../register/styled';
@@ -43,6 +44,8 @@ const LoginPage: NextPage = () => {
     if (formError) setFormError('');
     signInWithEmailAndPassword(userEmail, userPw);
   };
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
 
   if (user) {
     router.push('/');
@@ -96,6 +99,7 @@ const LoginPage: NextPage = () => {
             ImgSrc="https://static.vecteezy.com/system/resources/previews/010/353/285/original/colourful-google-logo-on-white-background-free-vector.jpg"
             Width={2.7}
             Height={2.7}
+            SignGoogle={signInWithGoogle}
           />
         </S.PushMargin>
         {modalState.view === 'resetPassword' ? (

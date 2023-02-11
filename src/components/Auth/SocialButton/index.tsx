@@ -2,13 +2,13 @@ import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 import * as S from './styled';
-import { auth } from '@/src/firebase';
 
 export interface SocialProps {
   SocialName: string;
   ImgSrc: string;
   Width: number;
   Height: number;
+  SignGoogle: any;
 }
 
 export const SocialButton: React.FC<SocialProps> = ({
@@ -16,10 +16,10 @@ export const SocialButton: React.FC<SocialProps> = ({
   ImgSrc,
   Width,
   Height,
+  SignGoogle,
 }) => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   return (
-    <S.Button onClick={() => signInWithGoogle()} backgroundColor="#ffffff">
+    <S.Button onClick={() => SignGoogle()} backgroundColor="#ffffff">
       <S.ButtonContainer>
         <S.SocialImg
           alt="SocialImg"
