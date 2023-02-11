@@ -6,94 +6,123 @@ import React, { use, useEffect, useState } from 'react';
 import * as S from './styled';
 import { getEng } from '@/src/api';
 import { SnackBar } from '@/src/components/common/Toastify';
+import { LoadingStyle } from '@/src/styles/common/styled';
 
 const LevelPage: React.FC = () => {
   //데이터 패칭해서 컴포넌트로 api 정보를 보냄
   const router = useRouter();
   const level = router.query.id;
+  //easy에 데이터가 들어오지 않았을 때 loading을 띄우면 될듯하다.
   const [easy, setEasy] = useState([
     {
       id: 0,
       question: '',
       options: [],
-      answer: 0,
+      answer: '',
     },
   ]);
-
+  const [hard, setHard] = useState([
+    {
+      id: 0,
+      question: '',
+      options: [],
+      answer: '',
+    },
+  ]);
+  const [normal, setNormal] = useState([
+    {
+      id: 0,
+      question: '',
+      options: [],
+      answer: '',
+    },
+  ]);
+  const [clickedObject, setClickedObject] = useState(false);
   useEffect(() => {
     getEng('db').then((v) => {
       setEasy(v.easy);
+      setNormal(v.normal);
+      setHard(v.hard);
     });
-  }, [level]);
-  const [clickedObject, setClickedObject] = useState(false);
+  }, []);
   const [toToastify, setToToastify] = useState(false);
+  const [onClicked, setOnClicked] = useState(false);
   const [QuizN, setQuizN] = useState(0);
-  const [seconds, setSeconds] = useState(0);
-  const [isRunning, setIsRunning] = useState(true);
+
   const clickAnswer = (event: any) => {
-    if (event === easy[QuizN].answer) {
+    if (
+      event === easy[QuizN].answer ||
+      event === normal[QuizN].answer ||
+      event === hard[QuizN].answer
+    ) {
       setClickedObject(true);
       setToToastify(true);
-      setIsRunning(!isRunning);
+      setOnClicked(true);
     } else {
+      setOnClicked(true);
       setClickedObject(false);
-      setIsRunning(true);
     }
   };
   useEffect(() => {
-    setSeconds(0);
-  }, [QuizN]);
-  //clock
-  useEffect(() => {
-    let intervalId: any;
-    if (easy.length !== QuizN) {
-      if (isRunning) {
-        intervalId = setInterval(() => {
-          setSeconds((seconds) => seconds + 1);
-        }, 1000);
-      } else if (!isRunning && seconds !== 0) {
-        clearInterval(intervalId);
-      }
-    } else {
-      console.log('watch stop');
+    if (level) {
+      setQuizN(0);
+      easy.sort(() => Math.random() - 0.5);
+      normal.sort(() => Math.random() - 0.5);
+      hard.sort(() => Math.random() - 0.5);
     }
-
-    return () => clearInterval(intervalId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isRunning, seconds]);
+  }, [level]);
   return (
     <S.LevelPageContainer>
-      <SnackBar seconds={seconds} answer={clickedObject} />
+      {onClicked ? <SnackBar answer={clickedObject} /> : <></>}
       <S.LevelTextContainer>
         난이도: {level === 'easy' ? <>쉬움</> : <></>}
         {level === 'normal' ? <>보통</> : <></>}
         {level === 'hard' ? <>어려움</> : <></>}
       </S.LevelTextContainer>
-      {clickedObject ? (
-        <button
-          onClick={() => {
-            setQuizN(QuizN + 1);
-            setClickedObject(false);
-          }}
-        >
-          다음으로
-        </button>
+      {easy.length === 1 ? (
+        <LoadingStyle>Loading...</LoadingStyle>
       ) : (
-        <></>
-      )}
-      <Level
-        LevelType={level as any}
-        easy={
-          <Easy
-            dataSets={easy}
-            reb={clickedObject}
-            answerClick={clickAnswer}
-            NextNum={QuizN}
+        <S.QuizContainer>
+          <Level
+            LevelType={level as any}
+            easy={
+              <Easy dataSets={easy} answerClick={clickAnswer} NextNum={QuizN} />
+            }
+            normal={
+              <Normal
+                dataSets={normal}
+                answerClick={clickAnswer}
+                NextNum={QuizN}
+              />
+            }
+            hard={
+              <Hard dataSets={hard} answerClick={clickAnswer} NextNum={QuizN} />
+            }
           />
-        }
-        normal={<Normal />}
-        hard={<Hard />}
-      />
+          <S.QuizButtonContainer>
+            {QuizN <= 0 ? (
+              <div style={{ marginLeft: '13rem' }}></div>
+            ) : (
+              <S.LeftButton
+                onClick={() => {
+                  setQuizN(QuizN - 1);
+                  setOnClicked(false);
+                }}
+              >
+                &lt;
+              </S.LeftButton>
+            )}
+            <S.RightButton
+              onClick={() => {
+                setQuizN(QuizN + 1);
+                setOnClicked(false);
+              }}
+            >
+              &gt;
+            </S.RightButton>
+          </S.QuizButtonContainer>
+        </S.QuizContainer>
+      )}
     </S.LevelPageContainer>
   );
 };
