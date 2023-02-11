@@ -26,7 +26,7 @@ const Menu: React.FC<AuthLink> = ({
   return (
     <S.MenuContainer>
       <S.Menus PageUrl={PageType}>
-        {PageType === 'level' ? (
+        {PageType === 'word' || PageType === 'sentence' ? (
           <S.LevelContentContainer>
             <S.LevelLink href={EasyUrl}>쉬움</S.LevelLink>
             <S.LevelLink href={NormalUrl}>보통</S.LevelLink>
@@ -38,8 +38,10 @@ const Menu: React.FC<AuthLink> = ({
           </S.RightContainer>
         ) : (
           <S.RightContainer>
-            <S.AuthLink href={LoginUrl}>로그인</S.AuthLink> |
-            <S.AuthLink href={RegisterUrl}> 회원가입</S.AuthLink>
+            <S.DoAuthContainer href={LoginUrl}>
+              <S.DoAuthHead />
+              <S.DoAuthBody />
+            </S.DoAuthContainer>
           </S.RightContainer>
         )}
       </S.Menus>

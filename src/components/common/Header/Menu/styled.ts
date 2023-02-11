@@ -14,14 +14,17 @@ export const MenuContainer = styled.div`
 `;
 
 export const Menus = styled.div<{ PageUrl: string }>`
-  width: 80%;
+  width: 79%;
+  @media screen and (max-width: 768px) {
+    width: 95%;
+  }
   margin-top: auto;
-  margin-right: ${(props) => (props.PageUrl === 'level' ? 'auto' : '0')};
+  margin-right: ${(props) => (props.PageUrl === 'word' ? 'auto' : '0')};
   margin-bottom: auto;
-  margin-left: ${(props) => (props.PageUrl === 'level' ? 'auto' : '0')};
+  margin-left: ${(props) => (props.PageUrl === 'word' ? 'auto' : '0')};
   font-size: 1.5rem;
   font-weight: 600;
-  display: ${(props) => (props.PageUrl === 'level' ? 'flex' : '')};
+  display: ${(props) => (props.PageUrl === 'word' ? 'flex' : '')};
 `;
 
 export const LevelLink = styled(Link)`
@@ -58,4 +61,30 @@ export const Logout = styled.div`
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   user-select: none;
+`;
+
+export const DoAuth = styled.img`
+  object-fit: cover;
+  width: 3rem;
+  height: 3rem;
+`;
+
+export const DoAuthContainer = styled(Link)`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const DoAuthHead = styled.div`
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+  border-radius: 2rem;
+  background-color: #d2d2d2;
+`;
+export const DoAuthBody = styled.div`
+  width: 1.5rem;
+  height: 1rem;
+  margin-top: 0.1rem;
+  background-color: #d2d2d2;
+  border-radius: 1rem 1rem 0 0;
 `;
