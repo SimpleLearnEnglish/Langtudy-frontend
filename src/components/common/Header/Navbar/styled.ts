@@ -18,5 +18,7 @@ export const NavbarFormGroup = styled.div`
 
 export const Logo = styled.img`
   width: 20rem;
+  height: 5.3rem;
   margin: 2rem auto 2rem auto;
+  cursor: pointer;
 `;
