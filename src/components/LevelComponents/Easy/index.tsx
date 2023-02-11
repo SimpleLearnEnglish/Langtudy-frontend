@@ -31,7 +31,7 @@ export const Easy: React.FC<EasyProps> = ({
           <S.MeanContainer>{dataSets[NextNum].question}</S.MeanContainer>
           <S.DataContainer>
             {dataSets[NextNum].options.map((val: any, idx: number) => (
-              <S.Data onClick={() => answerClick(val.id)} key={idx}>
+              <S.Data onClick={() => answerClick(val.option)} key={idx}>
                 {val.option}
               </S.Data>
             ))}
