@@ -1,7 +1,6 @@
 import { Host, Port } from '@/host';
-import axios from 'axios';
 
-export const getEng = async (offset?: string) => {
-  const data = await (await fetch(`https://${Host}/${offset}`)).json();
+export const getEng = async (offset?: string, repo?: string) => {
+  const data = await (await fetch(`https://${Host}${repo}/${offset}`)).json();
   return data;
 };
