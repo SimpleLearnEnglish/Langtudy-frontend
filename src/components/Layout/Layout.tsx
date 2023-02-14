@@ -23,9 +23,9 @@ const Layout: React.FC<LayoutTypes> = ({ children }) => {
           <Navbar GoUrlFunction={Location.push} />
           <Menu
             user={user}
-            EasyUrl="/word/level/easy"
-            NormalUrl="/word/level/normal"
-            HardUrl="/word/level/hard"
+            EasyUrl={`/${ShowHeaderBoolean}/level/easy`}
+            NormalUrl={`/${ShowHeaderBoolean}/level/normal`}
+            HardUrl={`/${ShowHeaderBoolean}/level/hard`}
             LoginUrl="/auth/login"
             RegisterUrl="/auth/register"
             PageType={ShowHeaderBoolean}
