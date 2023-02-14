@@ -6,20 +6,23 @@ type HardProps = {
   dataSets: any;
   answerClick: any;
   NextNum: number;
+  whatUrl: string;
 };
 
 export const Hard: React.FC<HardProps> = ({
   dataSets,
   answerClick,
   NextNum,
+  whatUrl,
 }) => {
-  //Will 02-08 Fin
   return (
     <>
       {NextNum >= dataSets.length ? (
         <S.HardContainer>
-          <S.MeanContainer>문제를 모두 풀었어요!👏</S.MeanContainer>
-          <S.MeanContainer>
+          <S.MeanContainer nowStudy={whatUrl}>
+            문제를 모두 풀었어요!👏
+          </S.MeanContainer>
+          <S.MeanContainer nowStudy={whatUrl}>
             원하는 단어 추가 요청하기
             <S.DescMenu>
               공부하고 싶은 단어를 문제에 추가할 수 있어요!
@@ -28,7 +31,14 @@ export const Hard: React.FC<HardProps> = ({
         </S.HardContainer>
       ) : (
         <S.HardContainer>
-          <S.MeanContainer>{dataSets[NextNum].question}</S.MeanContainer>
+          <S.MeanContainer nowStudy={whatUrl}>
+            {dataSets[NextNum].question}
+          </S.MeanContainer>
+          {whatUrl === 'sentence' ? (
+            <S.SentenceText>{dataSets[NextNum].sentence}</S.SentenceText>
+          ) : (
+            <></>
+          )}
           <S.DataContainer>
             {dataSets[NextNum].options.map((val: any, idx: number) => (
               <S.Data onClick={() => answerClick(val.option)} key={idx}>

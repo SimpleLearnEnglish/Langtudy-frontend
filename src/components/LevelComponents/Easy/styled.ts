@@ -13,19 +13,30 @@ export const EasyContainer = styled.div`
   }
 `;
 
-export const MeanContainer = styled.div`
+export const MeanContainer = styled.div<{ nowStudy: string }>`
   margin: auto;
   text-align: center;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: ${(props) => (props.nowStudy === 'sentence' ? '6rem' : '10rem')};
+  padding-bottom: ${(props) =>
+    props.nowStudy === 'sentence' ? '2rem' : '10rem'};
   @media screen and (max-width: 768px) {
     padding: 2rem;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: ${(props) =>
+      props.nowStudy === 'sentence' ? '6rem' : '10rem'};
+    padding-bottom: ${(props) =>
+      props.nowStudy === 'sentence' ? '2rem' : '10rem'};
   }
-  font-size: 2.3rem;
-  font-weight: 800;
+  font-size: ${(props) => (props.nowStudy === 'sentence' ? '2rem' : '2.3rem')};
+  font-weight: 600;
   letter-spacing: 1px;
+`;
+
+export const SentenceText = styled.div`
+  padding-top: 2rem;
+  padding-bottom: 8rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
 `;
 
 export const DataContainer = styled.div`
