@@ -23,6 +23,7 @@ const Menu: React.FC<AuthLink> = ({
   RegisterUrl,
   PageType,
 }) => {
+  console.log(PageType);
   return (
     <S.MenuContainer>
       <S.Menus PageUrl={PageType}>
