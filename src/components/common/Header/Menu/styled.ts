@@ -19,12 +19,12 @@ export const Menus = styled.div<{ PageUrl: string }>`
     width: 95%;
   }
   margin-top: auto;
-  margin-right: ${(props) => (props.PageUrl === 'word' ? 'auto' : '0')};
+  margin-right: ${(props) => (props.PageUrl === '' || '' ? '0' : 'auto')};
   margin-bottom: auto;
-  margin-left: ${(props) => (props.PageUrl === 'word' ? 'auto' : '0')};
+  margin-left: ${(props) => (props.PageUrl === '' || '' ? '0' : 'auto')};
   font-size: 1.5rem;
   font-weight: 600;
-  display: ${(props) => (props.PageUrl === 'word' ? 'flex' : '')};
+  display: ${(props) => (props.PageUrl === '' || '' ? '0' : 'flex')};
 `;
 
 export const LevelLink = styled(Link)`
@@ -61,6 +61,7 @@ export const Logout = styled.div`
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   user-select: none;
+  cursor: pointer;
 `;
 
 export const DoAuth = styled.img`

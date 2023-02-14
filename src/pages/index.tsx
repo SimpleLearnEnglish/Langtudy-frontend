@@ -9,12 +9,13 @@ import { Margin } from '../styles/common/styled';
 import { User } from 'firebase/auth';
 import ChooseLevel from '../components/Modal/ChooseLevel';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 const HomePage: NextPage = () => {
   const list = ['영어', '일본어'];
   const setAuthModalState = useSetRecoilState(authModalState);
   const [modalState, setModalState] = useRecoilState(authModalState);
-
+  const [studyType, setStudyType] = useState('');
   const handleClose = () =>
     setModalState((prev) => ({
       ...prev,
@@ -23,7 +24,9 @@ const HomePage: NextPage = () => {
     }));
 
   const router = useRouter();
-
+  const GoWhereClick = (event: any) => {
+    setStudyType(event);
+  };
   return (
     <S.HomePageContainer>
       <S.SectionContainer2>
@@ -35,12 +38,13 @@ const HomePage: NextPage = () => {
               <S.ContentListContainer>
                 <S.ContentC>
                   <S.WordContent
-                    onClick={() =>
+                    onClick={() => {
                       setAuthModalState((prev) => ({
                         ...prev,
                         view: 'chooseLevel',
-                      }))
-                    }
+                      }));
+                      GoWhereClick('word');
+                    }}
                   >
                     <S.ContentContainer>
                       <S.ContentTitle>단어 맞추기</S.ContentTitle>
@@ -59,12 +63,13 @@ const HomePage: NextPage = () => {
                   </S.WordContent>
                   <Margin marginRem={0.5} />
                   <S.SentenceContent
-                    onClick={() =>
+                    onClick={() => {
                       setAuthModalState((prev) => ({
                         ...prev,
                         view: 'chooseLevel',
-                      }))
-                    }
+                      }));
+                      GoWhereClick('sentence');
+                    }}
                   >
                     <S.ContentContainer>
                       <S.ContentTitle>문장 맞추기</S.ContentTitle>
@@ -90,7 +95,11 @@ const HomePage: NextPage = () => {
         })}
       </S.SectionContainer2>
       {modalState.view === 'chooseLevel' ? (
-        <ChooseLevel handleClose={handleClose} moveRouter={router} />
+        <ChooseLevel
+          handleClose={handleClose}
+          moveRouter={router}
+          goWhere={studyType}
+        />
       ) : (
         <></>
       )}
