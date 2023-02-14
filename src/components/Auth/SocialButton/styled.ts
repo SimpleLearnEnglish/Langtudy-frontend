@@ -4,6 +4,7 @@ export const Button = styled.button<{ backgroundColor: string }>`
   width: 34rem;
   display: flex;
 
+  cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.6rem;
   background-color: ${(props) => props.backgroundColor};
