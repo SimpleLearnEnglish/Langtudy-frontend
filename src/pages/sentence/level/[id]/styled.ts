@@ -16,8 +16,8 @@ export const LevelTextContainer = styled.div`
   width: 100%;
 
   //text
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.8rem;
+  font-weight: 500;
   text-align: center;
 `;
 

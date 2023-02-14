@@ -12,12 +12,16 @@ import { toast } from 'react-toastify';
 const LevelPage: React.FC = () => {
   //데이터 패칭해서 컴포넌트로 api 정보를 보냄
   const router = useRouter();
+  const urlString = router.pathname.split('/')[1];
   const level = router.query.id;
   //easy에 데이터가 들어오지 않았을 때 loading을 띄우면 될듯하다.
   const [easy, setEasy] = useState([
     {
       id: 0,
       question: '',
+      info: '',
+      tip: '',
+      sentence: '',
       options: [],
       answer: '',
     },
@@ -26,6 +30,9 @@ const LevelPage: React.FC = () => {
     {
       id: 0,
       question: '',
+      info: '',
+      tip: '',
+      sentence: '',
       options: [],
       answer: '',
     },
@@ -34,13 +41,17 @@ const LevelPage: React.FC = () => {
     {
       id: 0,
       question: '',
+      info: '',
+      tip: '',
+      sentence: '',
       options: [],
       answer: '',
     },
   ]);
   const [clickedObject, setClickedObject] = useState(false);
+
   useEffect(() => {
-    getEng('db').then((v) => {
+    getEng('db', 'Langtudy_sentence').then((v) => {
       setEasy(v.easy);
       setNormal(v.normal);
       setHard(v.hard);
@@ -48,7 +59,6 @@ const LevelPage: React.FC = () => {
   }, []);
   const [onClicked, setOnClicked] = useState(false);
   const [QuizN, setQuizN] = useState(0);
-
   const clickAnswer = (event: any) => {
     if (
       event === easy[QuizN].answer ||
@@ -93,17 +103,28 @@ const LevelPage: React.FC = () => {
           <Level
             LevelType={level as any}
             easy={
-              <Easy dataSets={easy} answerClick={clickAnswer} NextNum={QuizN} />
+              <Easy
+                dataSets={easy}
+                answerClick={clickAnswer}
+                NextNum={QuizN}
+                whatUrl={urlString}
+              />
             }
             normal={
               <Normal
                 dataSets={normal}
                 answerClick={clickAnswer}
                 NextNum={QuizN}
+                whatUrl={urlString}
               />
             }
             hard={
-              <Hard dataSets={hard} answerClick={clickAnswer} NextNum={QuizN} />
+              <Hard
+                dataSets={hard}
+                answerClick={clickAnswer}
+                NextNum={QuizN}
+                whatUrl={urlString}
+              />
             }
           />
           <S.QuizButtonContainer>
