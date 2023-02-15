@@ -22,18 +22,19 @@ export const MeanContainer = styled.div<{ nowStudy: string }>`
   @media screen and (max-width: 768px) {
     padding: 2rem;
     padding-top: ${(props) =>
-      props.nowStudy === 'sentence' ? '6rem' : '10rem'};
+      props.nowStudy === 'sentence' ? '5rem' : '10rem'};
     padding-bottom: ${(props) =>
       props.nowStudy === 'sentence' ? '2rem' : '10rem'};
   }
-  font-size: ${(props) => (props.nowStudy === 'sentence' ? '2rem' : '2.3rem')};
+  font-size: ${(props) =>
+    props.nowStudy === 'sentence' ? '1.8rem' : '2.3rem'};
   font-weight: 600;
   letter-spacing: 1px;
 `;
 
 export const SentenceText = styled.div`
   padding-top: 2rem;
-  padding-bottom: 8rem;
+  padding-bottom: 9rem;
   text-align: center;
   font-weight: 700;
   font-size: 2rem;
