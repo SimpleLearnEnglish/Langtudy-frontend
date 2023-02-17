@@ -100,6 +100,15 @@ const LevelPage: React.FC = () => {
         <LoadingStyle>Loading...</LoadingStyle>
       ) : (
         <S.QuizContainer>
+          <S.QuizInfoContainer>
+            <S.QuizInfo>
+              <S.InfoText>
+                {level === 'easy' ? easy[QuizN].info : <></>}
+                {level === 'normal' ? normal[QuizN].info : <></>}
+                {level === 'hard' ? hard[QuizN].info : <></>}
+              </S.InfoText>
+            </S.QuizInfo>
+          </S.QuizInfoContainer>
           <Level
             LevelType={level as any}
             easy={
