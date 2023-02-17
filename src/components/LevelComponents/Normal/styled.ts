@@ -6,9 +6,9 @@ export const NormalContainer = styled.div`
   border: 1px solid #0000001f;
   border-radius: 1.75rem;
   background-color: #ffffff;
-  margin: 4rem auto auto auto;
+  margin: 1rem auto auto auto;
   @media screen and (max-width: 768px) {
-    margin: 2rem auto auto auto;
+    margin: 0 auto auto auto;
     width: 35rem;
   }
 `;
