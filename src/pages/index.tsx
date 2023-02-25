@@ -87,7 +87,19 @@ const HomePage: NextPage = () => {
                     </S.ContentContainer>
                   </S.SentenceContent>
                   <Margin marginRem={0.5} />
-                  <S.Content2></S.Content2>
+                  <S.Content2
+                    onClick={() => {
+                      setAuthModalState((prev) => ({
+                        ...prev,
+                        view: 'chooseLevel',
+                      }));
+                      GoWhereClick('mean');
+                    }}
+                  >
+                    <S.ContentContainer>
+                      <S.ContentTitle>영작하기</S.ContentTitle>
+                    </S.ContentContainer>
+                  </S.Content2>
                 </S.ContentC>
               </S.ContentListContainer>
             </S.ContentLineContainer>
