@@ -112,28 +112,46 @@ const LevelPage: React.FC = () => {
           <Level
             LevelType={level as any}
             easy={
-              <Easy
-                dataSets={easy}
-                answerClick={clickAnswer}
-                NextNum={QuizN}
-                whatUrl={urlString}
-              />
+              easy.length === 1 ? (
+                <LoadingStyle>Loading...</LoadingStyle>
+              ) : QuizN >= easy.length ? (
+                <div>all solved</div>
+              ) : (
+                <Easy
+                  dataSets={easy}
+                  answerClick={clickAnswer}
+                  NextNum={QuizN}
+                  whatUrl={urlString}
+                />
+              )
             }
             normal={
-              <Normal
-                dataSets={normal}
-                answerClick={clickAnswer}
-                NextNum={QuizN}
-                whatUrl={urlString}
-              />
+              normal.length === 1 ? (
+                <LoadingStyle>Loading...</LoadingStyle>
+              ) : QuizN >= normal.length ? (
+                <div>all solved</div>
+              ) : (
+                <Normal
+                  dataSets={normal}
+                  answerClick={clickAnswer}
+                  NextNum={QuizN}
+                  whatUrl={urlString}
+                />
+              )
             }
             hard={
-              <Hard
-                dataSets={hard}
-                answerClick={clickAnswer}
-                NextNum={QuizN}
-                whatUrl={urlString}
-              />
+              hard.length === 1 ? (
+                <LoadingStyle>Loading...</LoadingStyle>
+              ) : QuizN >= hard.length ? (
+                <div>all solved</div>
+              ) : (
+                <Hard
+                  dataSets={hard}
+                  answerClick={clickAnswer}
+                  NextNum={QuizN}
+                  whatUrl={urlString}
+                />
+              )
             }
           />
           <S.QuizButtonContainer>
