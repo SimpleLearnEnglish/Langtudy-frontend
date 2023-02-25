@@ -17,17 +17,9 @@ export const Hard: React.FC<HardProps> = ({
 }) => {
   return (
     <>
-      {NextNum >= dataSets.length ? (
+      {whatUrl === 'mean' ? (
         <S.HardContainer>
-          <S.MeanContainer nowStudy={whatUrl}>
-            문제를 모두 풀었어요!👏
-          </S.MeanContainer>
-          <S.MeanContainer nowStudy={whatUrl}>
-            원하는 단어 추가 요청하기
-            <S.DescMenu>
-              공부하고 싶은 단어를 문제에 추가할 수 있어요!
-            </S.DescMenu>
-          </S.MeanContainer>
+          <S.MeanText>{dataSets[NextNum].sentence}</S.MeanText>
         </S.HardContainer>
       ) : (
         <S.HardContainer>
