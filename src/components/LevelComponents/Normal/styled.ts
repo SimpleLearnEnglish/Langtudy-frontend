@@ -39,6 +39,13 @@ export const SentenceText = styled.div`
   font-weight: 700;
   font-size: 2rem;
 `;
+export const MeanText = styled.div`
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+`;
 
 export const DataContainer = styled.div`
   display: flex;
