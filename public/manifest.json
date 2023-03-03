@@ -2,7 +2,7 @@
   "theme_color": "#f4f4f4",
   "background_color": "#f4f4f4",
   "display": "standalone",
-  "scope": "http://localhost:3000/",
+  "scope": "https://langtudy.vercel.app/",
   "start_url": "/",
   "name": "\ub7ad\ud130\ub514",
   "short_name": "\ub7ad\ud130\ub514",
