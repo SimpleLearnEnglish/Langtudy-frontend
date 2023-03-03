@@ -3,7 +3,6 @@ import { Easy, Normal, Hard } from 'src/components';
 import { useRouter } from 'next/router';
 import React, { use, useEffect, useState } from 'react';
 
-import * as S from './styled';
 import { getEng } from '@/src/api';
 import { SnackBar } from '@/src/components/common/Toastify';
 import { LoadingStyle } from '@/src/styles/common/styled';
@@ -98,14 +97,14 @@ const LevelPage: React.FC = () => {
     }
   };
   return (
-    <S.LevelPageContainer>
+    <LevelPageContainer>
       {onClicked ? <SnackBar /> : <></>}
-      <S.LevelTextContainer>
+      <LevelTextContainer>
         난이도: {level === 'easy' ? <>쉬움</> : <></>}
         {level === 'normal' ? <>보통</> : <></>}
         {level === 'hard' ? <>어려움</> : <></>}
-      </S.LevelTextContainer>
-      <S.QuizContainer>
+      </LevelTextContainer>
+      <QuizContainer>
         <Level
           LevelType={level as any}
           easy={
@@ -113,13 +112,13 @@ const LevelPage: React.FC = () => {
               easy[0].answer === '' ? (
                 <LoadingStyle>Loading...</LoadingStyle>
               ) : QuizN >= easy.length ? (
-                <S.AllSolved>
-                  <S.AllSolvedText>문제를 다 풀었어요👏</S.AllSolvedText>
-                  <S.AllSolvedDesc>
+                <AllSolved>
+                  <AllSolvedText>문제를 다 풀었어요👏</AllSolvedText>
+                  <AllSolvedDesc>
                     추가하고 싶은 단어가 있다면{' '}
-                    <S.AllSolvedPoint>클릭</S.AllSolvedPoint>
-                  </S.AllSolvedDesc>
-                </S.AllSolved>
+                    <AllSolvedPoint>클릭</AllSolvedPoint>
+                  </AllSolvedDesc>
+                </AllSolved>
               ) : (
                 <>
                   <Easy
@@ -128,17 +127,17 @@ const LevelPage: React.FC = () => {
                     NextNum={QuizN}
                     whatUrl={urlString}
                   />
-                  <S.AnswerContainer>
-                    <S.AnswerInputBox>
-                      <S.AnswerInput
+                  <AnswerContainer>
+                    <AnswerInputBox>
+                      <AnswerInput
                         className="answer"
                         onChange={(e) => setMean(e.target.value)}
                         placeholder="정답"
                         value={mean}
                       />
-                    </S.AnswerInputBox>
-                    <S.AnswerCheck onClick={AnswerSubmit}>확인</S.AnswerCheck>
-                  </S.AnswerContainer>
+                    </AnswerInputBox>
+                    <AnswerCheck onClick={AnswerSubmit}>확인</AnswerCheck>
+                  </AnswerContainer>
                 </>
               )
             ) : (
@@ -150,13 +149,13 @@ const LevelPage: React.FC = () => {
               normal[0].answer === '' ? (
                 <LoadingStyle>Loading...</LoadingStyle>
               ) : QuizN >= normal.length ? (
-                <S.AllSolved>
-                  <S.AllSolvedText>문제를 다 풀었어요👏</S.AllSolvedText>
-                  <S.AllSolvedDesc>
+                <AllSolved>
+                  <AllSolvedText>문제를 다 풀었어요👏</AllSolvedText>
+                  <AllSolvedDesc>
                     추가하고 싶은 문장이 있다면{' '}
-                    <S.AllSolvedPoint>클릭</S.AllSolvedPoint>
-                  </S.AllSolvedDesc>
-                </S.AllSolved>
+                    <AllSolvedPoint>클릭</AllSolvedPoint>
+                  </AllSolvedDesc>
+                </AllSolved>
               ) : (
                 <>
                   <Normal
@@ -165,17 +164,17 @@ const LevelPage: React.FC = () => {
                     NextNum={QuizN}
                     whatUrl={urlString}
                   />
-                  <S.AnswerContainer>
-                    <S.AnswerInputBox>
-                      <S.AnswerInput
+                  <AnswerContainer>
+                    <AnswerInputBox>
+                      <AnswerInput
                         className="answer"
                         onChange={(e) => setMean(e.target.value)}
                         placeholder="정답"
                         value={mean}
                       />
-                    </S.AnswerInputBox>
-                    <S.AnswerCheck onClick={AnswerSubmit}>확인</S.AnswerCheck>
-                  </S.AnswerContainer>
+                    </AnswerInputBox>
+                    <AnswerCheck onClick={AnswerSubmit}>확인</AnswerCheck>
+                  </AnswerContainer>
                 </>
               )
             ) : (
@@ -187,13 +186,13 @@ const LevelPage: React.FC = () => {
               hard[0].answer === '' ? (
                 <LoadingStyle>Loading...</LoadingStyle>
               ) : QuizN >= hard.length ? (
-                <S.AllSolved>
-                  <S.AllSolvedText>문제를 다 풀었어요👏</S.AllSolvedText>
-                  <S.AllSolvedDesc>
+                <AllSolved>
+                  <AllSolvedText>문제를 다 풀었어요👏</AllSolvedText>
+                  <AllSolvedDesc>
                     추가하고 싶은 뜻과 문장이 있다면{' '}
-                    <S.AllSolvedPoint>클릭</S.AllSolvedPoint>
-                  </S.AllSolvedDesc>
-                </S.AllSolved>
+                    <AllSolvedPoint>클릭</AllSolvedPoint>
+                  </AllSolvedDesc>
+                </AllSolved>
               ) : (
                 <>
                   <Hard
@@ -202,17 +201,17 @@ const LevelPage: React.FC = () => {
                     NextNum={QuizN}
                     whatUrl={urlString}
                   />
-                  <S.AnswerContainer>
-                    <S.AnswerInputBox>
-                      <S.AnswerInput
+                  <AnswerContainer>
+                    <AnswerInputBox>
+                      <AnswerInput
                         className="answer"
                         onChange={(e) => setMean(e.target.value)}
                         placeholder="정답"
                         value={mean}
                       />
-                    </S.AnswerInputBox>
-                    <S.AnswerCheck onClick={AnswerSubmit}>확인</S.AnswerCheck>
-                  </S.AnswerContainer>
+                    </AnswerInputBox>
+                    <AnswerCheck onClick={AnswerSubmit}>확인</AnswerCheck>
+                  </AnswerContainer>
                 </>
               )
             ) : (
@@ -221,11 +220,11 @@ const LevelPage: React.FC = () => {
           }
         />
 
-        <S.QuizButtonContainer>
+        <QuizButtonContainer>
           {QuizN <= 0 ? (
             <div style={{ marginLeft: '13rem' }}></div>
           ) : (
-            <S.LeftButton
+            <LeftButton
               onClick={() => {
                 setQuizN(QuizN - 1);
                 setOnClicked(false);
@@ -233,12 +232,12 @@ const LevelPage: React.FC = () => {
               }}
             >
               &lt;
-            </S.LeftButton>
+            </LeftButton>
           )}
           {QuizN >= easy.length ? (
             <div style={{ marginLeft: '13rem' }}></div>
           ) : (
-            <S.RightButton
+            <RightButton
               onClick={() => {
                 setQuizN(QuizN + 1);
                 setOnClicked(false);
@@ -246,12 +245,157 @@ const LevelPage: React.FC = () => {
               }}
             >
               &gt;
-            </S.RightButton>
+            </RightButton>
           )}
-        </S.QuizButtonContainer>
-      </S.QuizContainer>
-    </S.LevelPageContainer>
+        </QuizButtonContainer>
+      </QuizContainer>
+    </LevelPageContainer>
   );
 };
 
 export default LevelPage;
+import styled from '@emotion/styled';
+
+export const LevelPageContainer = styled.div`
+  //shape
+  width: 100%;
+
+  //position
+  display: flex;
+  flex-direction: column;
+
+  //style
+  margin-top: 18rem;
+`;
+
+export const LevelTextContainer = styled.div`
+  width: 100%;
+
+  //text
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+`;
+
+export const QuizContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 10rem;
+`;
+
+export const QuizButtonContainer = styled.div`
+  margin: 5rem auto 10rem auto;
+  display: flex;
+`;
+
+export const LeftButton = styled.button`
+  width: 3rem;
+  height: 3rem;
+  margin: auto 10rem auto 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5rem;
+  background-color: white;
+  @media screen and (min-width: 768px) {
+    :hover {
+      background-color: rgba(153, 255, 116, 0.4);
+    }
+  }
+  cursor: pointer;
+  transition: all 0.2s;
+`;
+
+export const RightButton = styled.button`
+  width: 3rem;
+  height: 3rem;
+  margin: auto 0 auto 10rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5rem;
+  background-color: white;
+  @media screen and (min-width: 768px) {
+    :hover {
+      background-color: rgba(153, 255, 116, 0.4);
+    }
+  }
+  cursor: pointer;
+  transition: all 0.2s;
+`;
+
+export const AnswerContainer = styled.div`
+  margin: auto;
+  margin-top: 1rem;
+  display: flex;
+`;
+
+export const AnswerInputBox = styled.div`
+  width: 44rem;
+  height: 5rem;
+  background: #ffffff;
+  border-radius: 10px;
+  @media screen and (max-width: 768px) {
+    width: 29rem;
+    height: 5rem;
+  }
+`;
+export const AnswerInput = styled.input`
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  border-radius: 10px;
+
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+`;
+export const AnswerCheck = styled.button`
+  width: 5rem;
+  height: 5rem;
+
+  margin-left: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background: #ffffff;
+  cursor: pointer;
+
+  font-size: 15px;
+  font-weight: bold;
+  @media screen and (max-width: 768px) {
+  }
+`;
+
+export const AllSolved = styled.div`
+  width: 40rem;
+  height: 20rem;
+  border-radius: 1.5rem;
+
+  margin: auto;
+  background: #ffffff;
+`;
+
+export const AllSolvedText = styled.div`
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+
+  margin-top: 9rem;
+  color: rgba(0, 0, 0, 1);
+`;
+export const AllSolvedDesc = styled.div`
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+
+  margin-top: 2rem;
+  color: rgba(0, 0, 0, 0.4);
+`;
+export const AllSolvedPoint = styled.span`
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+
+  margin-top: 2rem;
+  color: #259e1b;
+`;

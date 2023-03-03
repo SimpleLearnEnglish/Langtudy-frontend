@@ -3,14 +3,13 @@ import { Login } from '@/src/components/Auth/Login/Form';
 import { LoginInput } from '@/src/components/Auth/Login/InputForm';
 import React, { useState } from 'react';
 
-import * as S from './styled';
 import {
   useAuthState,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import { FIREBASE_ERRORS, auth } from '@/src/firebase';
-import { ErrorMessage } from '../register/styled';
+import { ErrorMessage } from '../register/index';
 import { useRouter } from 'next/router';
 
 //modal
@@ -51,11 +50,11 @@ const LoginPage: NextPage = () => {
     router.push('/');
   }
   return (
-    <S.LoginBackground>
-      <S.Center>
+    <LoginBackground>
+      <Center>
         <Login username={'asd'} status={false} />
-        <S.LoginForm onSubmit={OnSubmit}>
-          <S.LoginPosition>
+        <LoginForm onSubmit={OnSubmit}>
+          <LoginPosition>
             <LoginInput
               placeholder="이메일"
               name="email"
@@ -68,21 +67,21 @@ const LoginPage: NextPage = () => {
               type="password"
               setData={setUserPw}
             />
-          </S.LoginPosition>
+          </LoginPosition>
           <ErrorMessage>
             {formError ||
               FIREBASE_ERRORS[
                 userError?.message as keyof typeof FIREBASE_ERRORS
               ]}
           </ErrorMessage>
-          <S.LoginButton type="submit">로그인</S.LoginButton>
-        </S.LoginForm>
+          <LoginButton type="submit">로그인</LoginButton>
+        </LoginForm>
         <AuthBottom StyledMarinLeft={4} />
-        <S.OneLineFlex>
-          <S.OtherOptionText href={'/auth/register'}>
+        <OneLineFlex>
+          <OtherOptionText href={'/auth/register'}>
             계정이 없으신가요?
-          </S.OtherOptionText>
-          <S.LostPw
+          </OtherOptionText>
+          <LostPw
             onClick={() =>
               setAuthModalState((prev) => ({
                 ...prev,
@@ -91,9 +90,9 @@ const LoginPage: NextPage = () => {
             }
           >
             비밀빈호 초기화
-          </S.LostPw>
-        </S.OneLineFlex>
-        <S.PushMargin>
+          </LostPw>
+        </OneLineFlex>
+        <PushMargin>
           <SocialButton
             SocialName="구글로 로그인"
             ImgSrc="https://static.vecteezy.com/system/resources/previews/010/353/285/original/colourful-google-logo-on-white-background-free-vector.jpg"
@@ -101,15 +100,102 @@ const LoginPage: NextPage = () => {
             Height={2.7}
             SignGoogle={signInWithGoogle}
           />
-        </S.PushMargin>
+        </PushMargin>
         {modalState.view === 'resetPassword' ? (
           <ResetPassword handleClose={handleClose} />
         ) : (
           <></>
         )}
-      </S.Center>
-    </S.LoginBackground>
+      </Center>
+    </LoginBackground>
   );
 };
+import styled from '@emotion/styled';
+import Link from 'next/link';
+export const LoginBackground = styled.div`
+  background-color: #fff;
+  position: fixed;
+  width: 60%;
+  height: 100%;
+  left: 40%;
+  @media screen and (max-width: 400px) {
+    left: 0%;
+    width: 100%;
+  }
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Center = styled.div`
+  @media screen and (max-width: 400px) {
+    margin-left: 0;
+  }
+
+  margin-left: 10rem;
+`;
+
+export const LoginButton = styled.button`
+  width: 34.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(153, 255, 116, 0.4);
+
+  :hover {
+    background-color: rgba(153, 255, 116, 0.6);
+  }
+  border-radius: 0.6rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 3.5rem;
+  margin-left: 4rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 2rem;
+  }
+`;
+export const LoginForm = styled.form``;
+
+export const LoginPosition = styled.div`
+  margin-top: 6.5rem;
+`;
+
+export const LostPw = styled.button`
+  border: none;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 5.5rem;
+  user-select: none;
+  background-color: #ffffff;
+  :hover {
+    font-weight: 600;
+  }
+`;
+
+export const PushMargin = styled.div`
+  margin-left: 4rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 2rem;
+  }
+`;
+
+export const OneLineFlex = styled.div`
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
+export const OtherOptionText = styled(Link)`
+  width: 14rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 6rem;
+  text-decoration: none;
+  user-select: none;
+  color: rgba(0, 0, 0, 0.65);
+  :hover {
+    font-weight: 600;
+  }
+`;
 
 export default LoginPage;

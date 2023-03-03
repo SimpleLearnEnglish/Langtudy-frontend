@@ -7,7 +7,7 @@ import { useSetRecoilState } from 'recoil';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { FIREBASE_ERRORS, auth } from '@/src/firebase';
 import * as S from './styled';
-import { ErrorMessage } from '@/src/pages/auth/register/styled';
+import { ErrorMessage } from '@/src/pages/auth/register/index';
 
 type ResetPasswordProps = {
   handleClose: any;

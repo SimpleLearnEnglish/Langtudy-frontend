@@ -3,7 +3,6 @@ import { Easy, Normal, Hard } from 'src/components';
 import { useRouter } from 'next/router';
 import React, { use, useEffect, useState } from 'react';
 
-import * as S from './styled';
 import { getEng } from '@/src/api';
 import { SnackBar } from '@/src/components/common/Toastify';
 import { LoadingStyle } from '@/src/styles/common/styled';
@@ -89,26 +88,26 @@ const LevelPage: React.FC = () => {
     }
   }, [level]);
   return (
-    <S.LevelPageContainer>
+    <LevelPageContainer>
       {onClicked ? <SnackBar /> : <></>}
-      <S.LevelTextContainer>
+      <LevelTextContainer>
         난이도: {level === 'easy' ? <>쉬움</> : <></>}
         {level === 'normal' ? <>보통</> : <></>}
         {level === 'hard' ? <>어려움</> : <></>}
-      </S.LevelTextContainer>
+      </LevelTextContainer>
       {easy.length === 1 ? (
         <LoadingStyle>Loading...</LoadingStyle>
       ) : (
-        <S.QuizContainer>
-          <S.QuizInfoContainer>
-            <S.QuizInfo>
-              <S.InfoText>
+        <QuizContainer>
+          <QuizInfoContainer>
+            <QuizInfo>
+              <InfoText>
                 {level === 'easy' ? easy[QuizN].info : <></>}
                 {level === 'normal' ? normal[QuizN].info : <></>}
                 {level === 'hard' ? hard[QuizN].info : <></>}
-              </S.InfoText>
-            </S.QuizInfo>
-          </S.QuizInfoContainer>
+              </InfoText>
+            </QuizInfo>
+          </QuizInfoContainer>
           <Level
             LevelType={level as any}
             easy={
@@ -154,32 +153,119 @@ const LevelPage: React.FC = () => {
               )
             }
           />
-          <S.QuizButtonContainer>
+          <QuizButtonContainer>
             {QuizN <= 0 ? (
               <div style={{ marginLeft: '13rem' }}></div>
             ) : (
-              <S.LeftButton
+              <LeftButton
                 onClick={() => {
                   setQuizN(QuizN - 1);
                   setOnClicked(false);
                 }}
               >
                 &lt;
-              </S.LeftButton>
+              </LeftButton>
             )}
-            <S.RightButton
+            <RightButton
               onClick={() => {
                 setQuizN(QuizN + 1);
                 setOnClicked(false);
               }}
             >
               &gt;
-            </S.RightButton>
-          </S.QuizButtonContainer>
-        </S.QuizContainer>
+            </RightButton>
+          </QuizButtonContainer>
+        </QuizContainer>
       )}
-    </S.LevelPageContainer>
+    </LevelPageContainer>
   );
 };
 
 export default LevelPage;
+
+import styled from '@emotion/styled';
+
+export const LevelPageContainer = styled.div`
+  //shape
+  width: 100%;
+
+  //position
+  display: flex;
+  flex-direction: column;
+
+  //style
+  margin-top: 18rem;
+`;
+
+export const LevelTextContainer = styled.div`
+  width: 100%;
+
+  //text
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+`;
+
+export const QuizContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const QuizButtonContainer = styled.div`
+  margin: 3rem auto 10rem auto;
+  display: flex;
+`;
+
+export const LeftButton = styled.button`
+  width: 3rem;
+  height: 3rem;
+  margin: auto 10rem auto 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5rem;
+  background-color: white;
+  @media screen and (min-width: 768px) {
+    :hover {
+      background-color: rgba(153, 255, 116, 0.4);
+    }
+  }
+  cursor: pointer;
+  transition: all 0.2s;
+`;
+
+export const RightButton = styled.button`
+  width: 3rem;
+  height: 3rem;
+  margin: auto 0 auto 10rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5rem;
+  background-color: white;
+  @media screen and (min-width: 768px) {
+    :hover {
+      background-color: rgba(153, 255, 116, 0.4);
+    }
+  }
+  cursor: pointer;
+  transition: all 0.2s;
+`;
+
+export const QuizInfoContainer = styled.div`
+  width: 50rem;
+  margin: auto;
+`;
+
+export const QuizInfo = styled.div`
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid #0000001f;
+  margin-top: 1rem;
+  background: #ffffff;
+  border-radius: 1.2rem;
+`;
+
+export const InfoText = styled.div`
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
