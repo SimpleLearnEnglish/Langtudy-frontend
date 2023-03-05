@@ -21,9 +21,9 @@ export const AuthInput = styled.input`
   font-weight: bold;
   border-radius: 0.6rem;
   @media screen and (max-width: 768px) {
-    font-size: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    font-size: 1.7rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
   padding-left: 2rem;
   padding-top: 1.5rem;

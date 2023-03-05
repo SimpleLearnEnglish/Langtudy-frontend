@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Button = styled.button<{ backgroundColor: string }>`
-  width: 34rem;
+  width: 34.5rem;
   display: flex;
 
   cursor: pointer;

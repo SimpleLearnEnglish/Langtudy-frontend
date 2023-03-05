@@ -118,7 +118,7 @@ export const LoginBackground = styled.div`
   width: 60%;
   height: 100%;
   left: 40%;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 768px) {
     left: 0%;
     width: 100%;
   }
@@ -127,7 +127,7 @@ export const LoginBackground = styled.div`
 `;
 
 export const Center = styled.div`
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 768px) {
     margin-left: 0;
   }
 
@@ -149,9 +149,6 @@ export const LoginButton = styled.button`
   font-weight: bold;
   margin-top: 3.5rem;
   margin-left: 4rem;
-  @media screen and (max-width: 768px) {
-    margin-left: 2rem;
-  }
 `;
 export const LoginForm = styled.form``;
 
@@ -174,15 +171,12 @@ export const LostPw = styled.button`
 
 export const PushMargin = styled.div`
   margin-left: 4rem;
-  @media screen and (max-width: 768px) {
-    margin-left: 2rem;
-  }
 `;
 
 export const OneLineFlex = styled.div`
   display: flex;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 `;
 
 export const OtherOptionText = styled(Link)`

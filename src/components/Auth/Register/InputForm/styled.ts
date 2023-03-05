@@ -18,9 +18,9 @@ export const RegisterInput = styled.input`
   font-weight: bold;
   border-radius: 0.6rem;
   @media screen and (max-width: 768px) {
-    font-size: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    font-size: 1.7rem;
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
   }
   padding: 1.5rem 0 1.5rem 2rem;
   outline: none;

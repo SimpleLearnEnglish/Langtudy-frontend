@@ -109,7 +109,7 @@ export const RegisteradAdjustment = styled.div`
   margin-left: 20vw;
   margin-top: 10vw;
   @media screen and (max-width: 900px) {
-    margin: 0;
+    margin: auto;
   }
   @media screen and (min-width: 1500px) {
     margin-left: 35vw;
@@ -142,8 +142,8 @@ export const ErrorMessage = styled.div`
 export const RegisterForm = styled.form``;
 
 export const OtherOptionContainer = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 `;
 
 export const OtherOptionText = styled(Link)`
