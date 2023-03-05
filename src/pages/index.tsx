@@ -8,7 +8,7 @@ import { Margin } from '../styles/common/styled';
 import { User } from 'firebase/auth';
 import ChooseLevel from '../components/Modal/ChooseLevel';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const HomePage: NextPage = () => {
   const list = ['영어', '일본어'];
@@ -23,9 +23,18 @@ const HomePage: NextPage = () => {
     }));
 
   const router = useRouter();
-  const GoWhereClick = (event: any) => {
+  const GoWhereClick = (event: string) => {
     setStudyType(event);
   };
+  useEffect(() => {
+    window.addEventListener('beforeinstallprompt', function (event) {
+      event.preventDefault();
+      console.log(1);
+      //@ts-ignore
+      window.promptEvent = event;
+    });
+  }, []);
+  console.log('rendering');
   return (
     <HomePageContainer>
       <SectionContainer2>
