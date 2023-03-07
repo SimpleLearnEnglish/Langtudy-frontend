@@ -5,10 +5,11 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import { authModalState } from '../atoms/authModalAtom';
 
 import { Margin } from '../styles/common/styled';
-import { User } from 'firebase/auth';
 import ChooseLevel from '../components/Modal/ChooseLevel';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Seo from '../components/Seo';
+import styled from '@emotion/styled';
 
 const HomePage: NextPage = () => {
   const list = ['영어', '일본어'];
@@ -37,6 +38,7 @@ const HomePage: NextPage = () => {
   console.log('rendering');
   return (
     <HomePageContainer>
+      <Seo title="메인" />
       <SectionContainer2>
         {list.map((name, index) => {
           return (
@@ -128,8 +130,6 @@ const HomePage: NextPage = () => {
 };
 
 export default HomePage;
-
-import styled from '@emotion/styled';
 
 export const HomePageContainer = styled.div`
   margin-top: 20rem;

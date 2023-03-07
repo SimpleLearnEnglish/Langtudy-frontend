@@ -4466,12 +4466,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["agentkeepalive", [\
-        ["npm:4.2.1", {\
-          "packageLocation": "./.yarn/cache/agentkeepalive-npm-4.2.1-b86a9fb343-39cb49ed8c.zip/node_modules/agentkeepalive/",\
+        ["npm:4.3.0", {\
+          "packageLocation": "./.yarn/cache/agentkeepalive-npm-4.3.0-ac3d8e6807-982453aa44.zip/node_modules/agentkeepalive/",\
           "packageDependencies": [\
-            ["agentkeepalive", "npm:4.2.1"],\
+            ["agentkeepalive", "npm:4.3.0"],\
             ["debug", "virtual:007f670de2e506a151fec572a83f2de9d546622ece352a4cf72e57296c0aa644478f43ac47fd07d8495ee7103d37c60645e444556d514defaeb66e67a086d21f#npm:4.3.4"],\
-            ["depd", "npm:1.1.2"],\
+            ["depd", "npm:2.0.0"],\
             ["humanize-ms", "npm:1.2.1"]\
           ],\
           "linkType": "HARD"\
@@ -5057,7 +5057,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fs-minipass", "npm:2.1.0"],\
             ["glob", "npm:8.1.0"],\
             ["infer-owner", "npm:1.0.4"],\
-            ["lru-cache", "npm:7.18.1"],\
+            ["lru-cache", "npm:7.18.3"],\
             ["minipass", "npm:3.3.6"],\
             ["minipass-collect", "npm:1.0.2"],\
             ["minipass-flush", "npm:1.0.5"],\
@@ -5563,10 +5563,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["depd", [\
-        ["npm:1.1.2", {\
-          "packageLocation": "./.yarn/cache/depd-npm-1.1.2-b0c8414da7-6b406620d2.zip/node_modules/depd/",\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/depd-npm-2.0.0-b6c51a4b43-abbe19c768.zip/node_modules/depd/",\
           "packageDependencies": [\
-            ["depd", "npm:1.1.2"]\
+            ["depd", "npm:2.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7944,10 +7944,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:7.18.1", {\
-          "packageLocation": "./.yarn/cache/lru-cache-npm-7.18.1-1ae5fcb8ef-ab0ec1360c.zip/node_modules/lru-cache/",\
+        ["npm:7.18.3", {\
+          "packageLocation": "./.yarn/cache/lru-cache-npm-7.18.3-e68be5b11c-e550d77238.zip/node_modules/lru-cache/",\
           "packageDependencies": [\
-            ["lru-cache", "npm:7.18.1"]\
+            ["lru-cache", "npm:7.18.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7977,13 +7977,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/make-fetch-happen-npm-10.2.1-f1cc7cd2df-2332eb9a8e.zip/node_modules/make-fetch-happen/",\
           "packageDependencies": [\
             ["make-fetch-happen", "npm:10.2.1"],\
-            ["agentkeepalive", "npm:4.2.1"],\
+            ["agentkeepalive", "npm:4.3.0"],\
             ["cacache", "npm:16.1.3"],\
             ["http-cache-semantics", "npm:4.1.1"],\
             ["http-proxy-agent", "npm:5.0.0"],\
             ["https-proxy-agent", "npm:5.0.1"],\
             ["is-lambda", "npm:1.0.1"],\
-            ["lru-cache", "npm:7.18.1"],\
+            ["lru-cache", "npm:7.18.3"],\
             ["minipass", "npm:3.3.6"],\
             ["minipass-collect", "npm:1.0.2"],\
             ["minipass-fetch", "npm:2.1.2"],\
