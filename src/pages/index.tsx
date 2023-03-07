@@ -5,37 +5,49 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import { authModalState } from '../atoms/authModalAtom';
 
 import { Margin } from '../styles/common/styled';
+import { User } from 'firebase/auth';
 import ChooseLevel from '../components/Modal/ChooseLevel';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Seo from '../components/Seo';
-import styled from '@emotion/styled';
 
 const HomePage: NextPage = () => {
   const list = ['영어', '일본어'];
+
   const setAuthModalState = useSetRecoilState(authModalState);
+  const setAppInstallModalState = useSetRecoilState(installModalState);
   const [modalState, setModalState] = useRecoilState(authModalState);
+  const [pwaState, setPwaState] = useRecoilState(installModalState);
   const [studyType, setStudyType] = useState('');
-  const handleClose = () =>
+  const handleClose = () => {
     setModalState((prev) => ({
       ...prev,
       view: 'default',
       open: false,
     }));
-
+    setPwaState((prev) => ({
+      ...prev,
+      view: 'default',
+      open: false,
+    }));
+  };
   const router = useRouter();
   const GoWhereClick = (event: string) => {
     setStudyType(event);
   };
+
+  //설치했으면 1이 출려되지 않는다.
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', function (event) {
+      setPwaState((prev) => ({
+        ...prev,
+        view: 'yet',
+      }));
       event.preventDefault();
       console.log(1);
       //@ts-ignore
       window.promptEvent = event;
     });
   }, []);
-  console.log('rendering');
   return (
     <HomePageContainer>
       <Seo title="메인" />
@@ -116,6 +128,11 @@ const HomePage: NextPage = () => {
           );
         })}
       </SectionContainer2>
+      {pwaState.view === 'yet' ? (
+        <InstallAdvise handleClose={handleClose} />
+      ) : (
+        <></>
+      )}
       {modalState.view === 'chooseLevel' ? (
         <ChooseLevel
           handleClose={handleClose}
@@ -130,6 +147,11 @@ const HomePage: NextPage = () => {
 };
 
 export default HomePage;
+
+import styled from '@emotion/styled';
+import { installModalState } from '../atoms/appInstallAtom';
+import { InstallAdvise } from '../components';
+import Seo from '../components/Seo';
 
 export const HomePageContainer = styled.div`
   margin-top: 20rem;

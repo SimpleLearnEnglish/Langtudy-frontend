@@ -4,12 +4,13 @@ import * as S from './styled';
 import { ModalView, authModalState } from '@/src/atoms/authModalAtom';
 import { useSetRecoilState } from 'recoil';
 import { ToggleCloseIcon } from '@/src/styles/common/styled';
+import { NextRouter } from 'next/router';
 
-type ChooseLevelProps = {
-  handleClose: any;
-  moveRouter: any;
+interface ChooseLevelProps {
+  handleClose(): void;
+  moveRouter: NextRouter;
   goWhere: string;
-};
+}
 
 const ChooseLevel: React.FC<ChooseLevelProps> = ({
   handleClose,
