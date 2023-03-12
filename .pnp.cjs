@@ -4600,7 +4600,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["are-we-there-yet", "npm:3.0.1"],\
             ["delegates", "npm:1.0.0"],\
-            ["readable-stream", "npm:3.6.1"]\
+            ["readable-stream", "npm:3.6.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8117,10 +8117,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:4.2.4", {\
-          "packageLocation": "./.yarn/cache/minipass-npm-4.2.4-20f938f2dd-c664f2ae44.zip/node_modules/minipass/",\
+        ["npm:4.2.5", {\
+          "packageLocation": "./.yarn/cache/minipass-npm-4.2.5-25860eb433-4f9c19af23.zip/node_modules/minipass/",\
           "packageDependencies": [\
-            ["minipass", "npm:4.2.4"]\
+            ["minipass", "npm:4.2.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9184,10 +9184,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["readable-stream", [\
-        ["npm:3.6.1", {\
-          "packageLocation": "./.yarn/cache/readable-stream-npm-3.6.1-c3ccc68dc2-b7ab0508db.zip/node_modules/readable-stream/",\
+        ["npm:3.6.2", {\
+          "packageLocation": "./.yarn/cache/readable-stream-npm-3.6.2-d2a6069158-bdcbe6c22e.zip/node_modules/readable-stream/",\
           "packageDependencies": [\
-            ["readable-stream", "npm:3.6.1"],\
+            ["readable-stream", "npm:3.6.2"],\
             ["inherits", "npm:2.0.4"],\
             ["string_decoder", "npm:1.3.0"],\
             ["util-deprecate", "npm:1.0.2"]\
@@ -10047,7 +10047,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tar", "npm:6.1.13"],\
             ["chownr", "npm:2.0.0"],\
             ["fs-minipass", "npm:2.1.0"],\
-            ["minipass", "npm:4.2.4"],\
+            ["minipass", "npm:4.2.5"],\
             ["minizlib", "npm:2.1.2"],\
             ["mkdirp", "npm:1.0.4"],\
             ["yallist", "npm:4.0.0"]\
