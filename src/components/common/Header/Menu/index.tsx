@@ -26,9 +26,7 @@ const Menu: React.FC<AuthLink> = ({
   return (
     <S.MenuContainer>
       <S.Menus PageUrl={PageType}>
-        {PageType === 'word' ||
-        PageType === 'sentence' ||
-        PageType === 'mean' ? (
+        {PageType === 'eng' || PageType === 'japanese' ? (
           <S.LevelContentContainer>
             <S.LevelLink href={EasyUrl}>쉬움</S.LevelLink>
             <S.LevelLink href={NormalUrl}>보통</S.LevelLink>
