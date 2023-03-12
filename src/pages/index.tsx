@@ -48,6 +48,7 @@ const HomePage: NextPage = () => {
       window.promptEvent = event;
     });
   }, []);
+
   return (
     <HomePageContainer>
       <Seo title="메인" />
@@ -129,7 +130,12 @@ const HomePage: NextPage = () => {
         })}
       </SectionContainer2>
       {pwaState.view === 'yet' ? (
-        <InstallAdvise handleClose={handleClose} />
+        <InstallAdvise
+          IosIcon="https://www.ept.ca/wp-content/uploads/2020/06/Apple-logo.png"
+          AndroidIcon="https://cdn-icons-png.flaticon.com/256/14/14415.png"
+          PCIcon="https://cdn-icons-png.flaticon.com/512/4372/4372820.png"
+          handleClose={handleClose}
+        />
       ) : (
         <></>
       )}
