@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './styled';
 
+//issue: modal 터치시에 일어나는 상황 fix하기
 interface CloseFunction {
   handleClose(): void;
   IosIcon: string;

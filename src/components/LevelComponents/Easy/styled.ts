@@ -4,7 +4,7 @@ export const EasyContainer = styled.div`
   width: 50rem;
   height: 100%;
   border: 1px solid #0000001f;
-  border-radius: 1.75rem;
+  border-radius: 1rem;
   background-color: #ffffff;
   margin: 1rem auto auto auto;
   @media screen and (max-width: 768px) {
