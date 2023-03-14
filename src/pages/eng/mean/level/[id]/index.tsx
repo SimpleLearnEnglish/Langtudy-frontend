@@ -369,7 +369,7 @@ export const AnswerCheck = styled.button`
 export const AllSolved = styled.div`
   width: 40rem;
   height: 20rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 
   margin: auto;
   background: #ffffff;

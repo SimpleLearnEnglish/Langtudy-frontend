@@ -259,7 +259,7 @@ export const QuizInfo = styled.div`
   border: 1px solid #0000001f;
   margin-top: 1rem;
   background: #ffffff;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
 `;
 
 export const InfoText = styled.div`

@@ -66,7 +66,7 @@ const HomePage: NextPage = () => {
                         ...prev,
                         view: 'chooseLevel',
                       }));
-                      GoWhereClick('word');
+                      GoWhereClick('/eng/word');
                     }}
                   >
                     <ContentContainer>
@@ -91,7 +91,7 @@ const HomePage: NextPage = () => {
                         ...prev,
                         view: 'chooseLevel',
                       }));
-                      GoWhereClick('sentence');
+                      GoWhereClick('/eng/sentence');
                     }}
                   >
                     <ContentContainer>
@@ -116,7 +116,7 @@ const HomePage: NextPage = () => {
                         ...prev,
                         view: 'chooseLevel',
                       }));
-                      GoWhereClick('mean');
+                      GoWhereClick('/eng/mean');
                     }}
                   >
                     <ContentContainer>
@@ -191,6 +191,7 @@ export const ContentLineContainer = styled.div`
 
 export const ContentTitle2 = styled.div`
   font-size: 2.5rem;
+
   font-weight: 700;
   color: black;
   text-align: left;
@@ -204,6 +205,10 @@ export const Illustration = styled.img<{
   marginLeft: number;
   Rotate: number;
 }>`
+  @media screen and (max-width: 500px) {
+    width: 7rem;
+    height: 100%;
+  }
   width: ${(props) => props.WidthValue}rem;
   height: 100%;
   margin-top: ${(props) => props.marginTop}rem;
@@ -219,6 +224,9 @@ export const ContentContainer = styled.div`
 
 export const ContentTitle = styled.div`
   font-size: 2.5rem;
+  @media screen and (max-width: 500px) {
+    font-size: 2.2rem;
+  }
   font-weight: 700;
   color: #ffffff;
   margin: 2rem 0 0 2rem;
@@ -227,22 +235,34 @@ export const ContentTitle = styled.div`
 export const WordContent = styled.div`
   min-width: 29rem;
   height: 15rem;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   background-color: #72b9bb;
+  @media screen and (max-width: 500px) {
+    min-width: 25rem;
+    height: 13rem;
+  }
 `;
 
 export const SentenceContent = styled.div`
   min-width: 29rem;
   height: 15rem;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   background-color: #f0a4a4;
+  @media screen and (max-width: 500px) {
+    min-width: 25rem;
+    height: 13rem;
+  }
 `;
 
 export const Content2 = styled.div`
   min-width: 29rem;
   height: 15rem;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   background-color: #6c88ff;
+  @media screen and (max-width: 500px) {
+    min-width: 25rem;
+    height: 13rem;
+  }
 `;
 
 export const ContentListContainer = styled.div`
@@ -258,12 +278,14 @@ export const ContentC = styled.div`
   ::-webkit-scrollbar {
     display: none; /* 크롬, 사파리, 오페라, 엣지 */
   }
+  *
 `;
 
 export const Desc = styled.div`
   font-weight: 500;
   letter-spacing: 0.05rem;
   font-size: 1.4rem;
+
   text-align: left;
   color: #8e8e8e;
   margin-top: 0.5rem;
