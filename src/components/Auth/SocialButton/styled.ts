@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 
-export const Button = styled.button<{ backgroundColor: string }>`
+export const Button = styled.button<{
+  backgroundColor: string;
+  pathUrl: string;
+}>`
   width: 34.5rem;
   display: flex;
 
-  margin: auto;
-  @media screen and (min-width: 768px) {
-    margin-left: 4rem;
-  }
+  ${(props) => (props.pathUrl === 'login' ? 'margin-left: 4rem' : '')};
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.6rem;

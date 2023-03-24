@@ -9,6 +9,7 @@ export interface SocialProps {
   Width: number;
   Height: number;
   SignGoogle: any;
+  pathUrl: string;
 }
 
 export const SocialButton: React.FC<SocialProps> = ({
@@ -17,9 +18,14 @@ export const SocialButton: React.FC<SocialProps> = ({
   Width,
   Height,
   SignGoogle,
+  pathUrl,
 }) => {
   return (
-    <S.Button onClick={() => SignGoogle()} backgroundColor="#ffffff">
+    <S.Button
+      pathUrl={pathUrl}
+      onClick={() => SignGoogle()}
+      backgroundColor="#ffffff"
+    >
       <S.ButtonContainer>
         <S.SocialImg
           alt="SocialImg"
