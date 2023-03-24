@@ -10,7 +10,7 @@ export const AuthContainer = styled.div`
     background: rgba(0, 0, 0, 0.06);
   }
   @media screen and (max-width: 400px) {
-    margin: 3rem 0 0 2.2rem;
+    margin: 3rem auto 0 auto;
   }
 `;
 
@@ -51,7 +51,7 @@ export const AuthButton = styled.button`
   font-size: 2rem;
   font-weight: bold;
   margin-left: 4rem;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 768px) {
     margin: 0 0 0 2.2rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;

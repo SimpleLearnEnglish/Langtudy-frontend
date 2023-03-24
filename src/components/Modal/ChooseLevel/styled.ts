@@ -15,6 +15,10 @@ export const LevelWarp = styled.div`
 
 export const LevelContainer = styled.div`
   width: 60rem;
+  @media screen and (max-width: 768px) {
+    width: 40rem;
+    height: 25rem;
+  }
   height: 30rem;
   max-width: 60rem;
   border-radius: 1rem;
@@ -27,26 +31,12 @@ export const LevelButtonContainer = styled.div`
   display: flex;
   margin: auto;
 `;
-export const EasyButton = styled.button`
+export const LevelButton = styled.button`
   width: 12rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
   background: black;
-  margin: 1rem 0 1rem 1rem;
-`;
-export const NormalButton = styled.button`
-  width: 12rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
-  background: black;
-  margin: 1rem 0 1rem 1rem;
-`;
-export const HardButton = styled.button`
-  width: 12rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
-  background: black;
-  margin: 1rem 0 1rem 1rem;
+  margin: auto 0.5rem 3rem 0.5rem;
 `;
 
 export const Text = styled.div`
@@ -58,3 +48,38 @@ export const Text = styled.div`
 `;
 
 export const LevelGif = styled.img``;
+
+export const CloseIconContainer = styled.div`
+  position: relative;
+
+  margin-top: 15px;
+  margin-left: 15px;
+`;
+
+export const CloseIcon = styled.div`
+  width: 17px;
+  height: 17px;
+
+  padding-top: 7px;
+  cursor: pointer;
+  & > * {
+    background-color: #343a40;
+  }
+`;
+
+export const CloseIconLeftDown = styled.div`
+  width: 17px;
+  height: 2px;
+
+  position: absolute;
+  rotate: 315deg;
+  border-radius: 20px;
+`;
+export const CloseIconRightDown = styled.div`
+  width: 17px;
+  height: 2px;
+
+  position: absolute;
+  rotate: 46deg;
+  border-radius: 20px;
+`;

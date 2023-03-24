@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from './styled';
 
 import { ModalView, authModalState } from '@/src/atoms/authModalAtom';
-import { useSetRecoilState } from 'recoil';
 import { ToggleCloseIcon } from '@/src/styles/common/styled';
 import { NextRouter } from 'next/router';
 
@@ -20,24 +19,29 @@ const ChooseLevel: React.FC<ChooseLevelProps> = ({
   return (
     <S.LevelWarp>
       <S.LevelContainer>
+        <S.CloseIconContainer>
+          <S.CloseIcon onClick={handleClose}>
+            <S.CloseIconRightDown />
+            <S.CloseIconLeftDown />
+          </S.CloseIcon>
+        </S.CloseIconContainer>
         <S.LevelButtonContainer>
-          <S.EasyButton
+          <S.LevelButton
             onClick={() => moveRouter.push(`/${goWhere}/level/easy`)}
           >
             <S.Text>쉬움</S.Text>
-          </S.EasyButton>
-          <S.NormalButton
+          </S.LevelButton>
+          <S.LevelButton
             onClick={() => moveRouter.push(`/${goWhere}/level/normal`)}
           >
             <S.Text>보통</S.Text>
-          </S.NormalButton>
-          <S.HardButton
+          </S.LevelButton>
+          <S.LevelButton
             onClick={() => moveRouter.push(`/${goWhere}/level/hard`)}
           >
             <S.Text>어려움</S.Text>
-          </S.HardButton>
+          </S.LevelButton>
         </S.LevelButtonContainer>
-        <ToggleCloseIcon onClick={handleClose}>X</ToggleCloseIcon>
       </S.LevelContainer>
     </S.LevelWarp>
   );

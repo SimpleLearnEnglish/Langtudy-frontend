@@ -249,15 +249,20 @@ export const RightButton = styled.button`
 `;
 
 export const QuizInfoContainer = styled.div`
-  width: 50rem;
   margin: auto;
+  width: 35rem;
+  margin-bottom: 0.5rem;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 1rem;
+    width: 50rem;
+  }
 `;
 
 export const QuizInfo = styled.div`
   width: 100%;
   height: 3.5rem;
   border: 1px solid #0000001f;
-  margin-top: 1rem;
+  margin-top: 2rem;
   background: #ffffff;
   border-radius: 1rem;
 `;

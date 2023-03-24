@@ -150,10 +150,15 @@ export const LoginButton = styled.button`
   margin-top: 3.5rem;
   margin-left: 4rem;
 `;
-export const LoginForm = styled.form``;
+export const LoginForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const LoginPosition = styled.div`
   margin-top: 6.5rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const LostPw = styled.button`
@@ -170,7 +175,8 @@ export const LostPw = styled.button`
 `;
 
 export const PushMargin = styled.div`
-  margin-left: 4rem;
+  width: 100%;
+  display: flex;
 `;
 
 export const OneLineFlex = styled.div`
@@ -184,6 +190,9 @@ export const OtherOptionText = styled(Link)`
   font-size: 1.5rem;
   font-weight: 500;
   margin-left: 6rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 4rem;
+  }
   text-decoration: none;
   user-select: none;
   color: rgba(0, 0, 0, 0.65);
