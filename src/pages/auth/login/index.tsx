@@ -26,7 +26,6 @@ const LoginPage: NextPage = () => {
   const [userPw, setUserPw] = useState('');
   const [modalState, setModalState] = useRecoilState(authModalState);
   const [formError, setFormError] = useState('');
-
   const handleClose = () =>
     setModalState((prev) => ({
       ...prev,
@@ -94,6 +93,7 @@ const LoginPage: NextPage = () => {
         </OneLineFlex>
         <PushMargin>
           <SocialButton
+            pathUrl={'login'}
             SocialName="구글로 로그인"
             ImgSrc="https://static.vecteezy.com/system/resources/previews/010/353/285/original/colourful-google-logo-on-white-background-free-vector.jpg"
             Width={2.7}
