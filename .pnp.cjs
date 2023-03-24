@@ -6865,6 +6865,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["graceful-fs", "npm:4.2.10"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.2.11", {\
+          "packageLocation": "./.yarn/cache/graceful-fs-npm-4.2.11-24bb648a68-ac85f94da9.zip/node_modules/graceful-fs/",\
+          "packageDependencies": [\
+            ["graceful-fs", "npm:4.2.11"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["grapheme-splitter", [\
@@ -8384,7 +8391,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["node-gyp", "npm:9.3.1"],\
             ["env-paths", "npm:2.2.1"],\
             ["glob", "npm:7.2.3"],\
-            ["graceful-fs", "npm:4.2.10"],\
+            ["graceful-fs", "npm:4.2.11"],\
             ["make-fetch-happen", "npm:10.2.1"],\
             ["nopt", "npm:6.0.0"],\
             ["npmlog", "npm:6.0.2"],\
