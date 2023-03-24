@@ -77,6 +77,7 @@ const RegisterPage: NextPage = () => {
           </OtherOptionContainer>
         </RegisterForm>
         <SocialButton
+          pathUrl=""
           SocialName="구글로 회원가입"
           ImgSrc="https://static.vecteezy.com/system/resources/previews/010/353/285/original/colourful-google-logo-on-white-background-free-vector.jpg"
           Width={2.7}
