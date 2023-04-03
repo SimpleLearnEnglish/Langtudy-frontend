@@ -43,7 +43,6 @@ const HomePage: NextPage = () => {
         view: 'yet',
       }));
       event.preventDefault();
-      console.log(1);
       //@ts-ignore
       window.promptEvent = event;
     });
