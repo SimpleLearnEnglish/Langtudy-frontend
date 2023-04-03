@@ -9,9 +9,6 @@ export const BottomContainer = styled.div`
 export const horizontalContainer = styled.div`
   display: flex;
   margin-top: 1rem;
-  @media screen and (max-width: 400px) {
-    margin-left: -2rem;
-  }
 `;
 
 export const horizontalLineLeft = styled.div<{ marginleft: number }>`

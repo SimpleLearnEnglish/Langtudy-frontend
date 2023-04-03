@@ -7,6 +7,7 @@ export const LoginMainContainer = styled.div`
   margin-top: 12rem;
   @media screen and (max-width: 400px) {
     margin: 0;
+    width: 100%;
   }
 `;
 export const LoginTitleContainer = styled.div``;
@@ -18,7 +19,7 @@ export const LoginTitle = styled.div`
   letter-spacing: 0.1rem;
   margin-left: 4rem;
   @media screen and (max-width: 400px) {
-    margin: 0 0 0 3rem;
+    margin: 0 0 0 1rem;
   }
 `;
 
@@ -31,7 +32,7 @@ export const LoginDescription = styled.div`
   font-size: 1.6rem;
   margin-left: 4rem;
   @media screen and (max-width: 400px) {
-    margin: 0 0 0 3rem;
+    margin: 0 0 0 1rem;
   }
 `;
 
