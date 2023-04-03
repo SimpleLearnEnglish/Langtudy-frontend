@@ -128,7 +128,7 @@ export const LoginBackground = styled.div`
 
 export const Center = styled.div`
   @media screen and (max-width: 768px) {
-    margin-left: 0;
+    margin: auto;
   }
 
   margin-left: 10rem;
@@ -149,6 +149,10 @@ export const LoginButton = styled.button`
   font-weight: bold;
   margin-top: 3.5rem;
   margin-left: 4rem;
+  @media screen and (max-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 export const LoginForm = styled.form`
   display: flex;
@@ -159,6 +163,9 @@ export const LoginPosition = styled.div`
   margin-top: 6.5rem;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 768px) {
+    margin-top: 2rem;
+  }
 `;
 
 export const LostPw = styled.button`
