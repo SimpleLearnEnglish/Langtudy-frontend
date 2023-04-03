@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 const LevelPage: React.FC = () => {
   //데이터 패칭해서 컴포넌트로 api 정보를 보냄
   const router = useRouter();
-  const urlString = router.pathname.split('/')[1];
+  const urlString = router.pathname.split('/')[2];
   const level = router.query.id;
   //easy에 데이터가 들어오지 않았을 때 loading을 띄우면 될듯하다.
   const [easy, setEasy] = useState([
@@ -47,9 +47,14 @@ const LevelPage: React.FC = () => {
       setNormal(v.normal);
       setHard(v.hard);
     });
-  }, []);
+    setQuizN(0);
+    easy.sort(() => Math.random() - 0.5);
+    normal.sort(() => Math.random() - 0.5);
+    hard.sort(() => Math.random() - 0.5);
+  }, [level]);
   const [onClicked, setOnClicked] = useState(false);
   const [QuizN, setQuizN] = useState(0);
+
   const clickAnswer = (event: any) => {
     if (
       event === easy[QuizN].answer ||
@@ -70,12 +75,6 @@ const LevelPage: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    setQuizN(0);
-    easy.sort(() => Math.random() - 0.5);
-    normal.sort(() => Math.random() - 0.5);
-    hard.sort(() => Math.random() - 0.5);
-  }, [level]);
   const [mean, setMean] = useState('');
   const AnswerSubmit = () => {
     if (
