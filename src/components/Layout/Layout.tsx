@@ -13,6 +13,7 @@ export interface LayoutTypes {
 const Layout: React.FC<LayoutTypes> = ({ children }) => {
   const Location = useRouter();
   const ShowHeaderBoolean = Location.pathname.split('/')[1];
+  const WhereToGo = Location.pathname.split('/')[2];
   const [user, loading, error] = useAuthState(auth);
   return (
     <>
@@ -23,9 +24,9 @@ const Layout: React.FC<LayoutTypes> = ({ children }) => {
           <Navbar GoUrlFunction={Location.push} />
           <Menu
             user={user}
-            EasyUrl={`/${ShowHeaderBoolean}/level/easy`}
-            NormalUrl={`/${ShowHeaderBoolean}/level/normal`}
-            HardUrl={`/${ShowHeaderBoolean}/level/hard`}
+            EasyUrl={`/${ShowHeaderBoolean}/${WhereToGo}/level/easy`}
+            NormalUrl={`/${ShowHeaderBoolean}/${WhereToGo}/level/normal`}
+            HardUrl={`/${ShowHeaderBoolean}/${WhereToGo}/level/hard`}
             LoginUrl="/auth/login"
             RegisterUrl="/auth/register"
             PageType={ShowHeaderBoolean}
