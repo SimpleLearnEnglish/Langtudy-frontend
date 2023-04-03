@@ -37,6 +37,8 @@ export const LevelButton = styled.button`
   border-radius: 0.5rem;
   background: black;
   margin: auto 0.5rem 3rem 0.5rem;
+
+  cursor: pointer;
 `;
 
 export const Text = styled.div`
