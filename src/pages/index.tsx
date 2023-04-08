@@ -2,7 +2,7 @@ import React, { NextPage } from 'next';
 
 //modal
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { authModalState } from '../atoms/authModalAtom';
+import { AuthModalState, authModalState } from '../atoms/authModalAtom';
 
 import { Margin } from '../styles/common/styled';
 import { User } from 'firebase/auth';
@@ -11,7 +11,58 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 const HomePage: NextPage = () => {
-  const list = ['영어', '일본어'];
+  interface dataList {
+    name: string;
+    word: string;
+    sentence: string;
+    write: string;
+    wordImg: string;
+    sentenceImg: string;
+    writeImg: string;
+    openLevelClickWord: (event: React.MouseEvent<HTMLDivElement>) => void;
+    openLevelClickSen: (event: React.MouseEvent<HTMLDivElement>) => void;
+    openLevelClickWrite: (event: React.MouseEvent<HTMLDivElement>) => void;
+  }
+
+  function wordLevel(levelType: string) {
+    setAuthModalState((prev: AuthModalState) => ({
+      ...prev,
+      view: 'chooseLevel',
+    }));
+    GoWhereClick(`/eng/${levelType}`); // levelType 매개변수의 data 프로퍼티를 사용하도록 수정합니다.
+  }
+
+  const list: dataList[] = [
+    {
+      name: '영어',
+      word: '단어 맞추기',
+      sentence: '문장 맞추기',
+      write: '영작하기',
+      wordImg:
+        'https://cdn.discordapp.com/attachments/1054718420651872266/1069268172328419359/Frame_2.png',
+      sentenceImg:
+        'https://cdn.discordapp.com/attachments/1054718420651872266/1069490768093397012/Frame_3-removebg-preview.png',
+      writeImg: '',
+      openLevelClickWord: (event: React.MouseEvent<HTMLDivElement>) =>
+        wordLevel('word'), // 수정된 wordLevel 함수를 사용하도록 변경합니다.
+      openLevelClickSen: (event: React.MouseEvent<HTMLDivElement>) =>
+        wordLevel('sentence'),
+      openLevelClickWrite: (event: React.MouseEvent<HTMLDivElement>) =>
+        wordLevel('mean'),
+    },
+    {
+      name: '일본어',
+      word: '개발중',
+      sentence: '개발중',
+      write: '개발중',
+      wordImg: '',
+      sentenceImg: '',
+      writeImg: '',
+      openLevelClickWord: (event: React.MouseEvent<HTMLDivElement>) => 0,
+      openLevelClickSen: (event: React.MouseEvent<HTMLDivElement>) => 0,
+      openLevelClickWrite: (event: React.MouseEvent<HTMLDivElement>) => 0,
+    },
+  ];
 
   const setAuthModalState = useSetRecoilState(authModalState);
   const setAppInstallModalState = useSetRecoilState(installModalState);
@@ -19,12 +70,12 @@ const HomePage: NextPage = () => {
   const [pwaState, setPwaState] = useRecoilState(installModalState);
   const [studyType, setStudyType] = useState('');
   const handleClose = () => {
-    setModalState((prev) => ({
+    setModalState((prev: AuthModalState) => ({
       ...prev,
       view: 'default',
       open: false,
     }));
-    setPwaState((prev) => ({
+    setPwaState((prev: AppInstallModalState) => ({
       ...prev,
       view: 'default',
       open: false,
@@ -38,7 +89,7 @@ const HomePage: NextPage = () => {
   //설치했으면 1이 출려되지 않는다.
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', function (event) {
-      setPwaState((prev) => ({
+      setPwaState((prev: AppInstallModalState) => ({
         ...prev,
         view: 'yet',
       }));
@@ -52,74 +103,56 @@ const HomePage: NextPage = () => {
     <HomePageContainer>
       <Seo title="메인" />
       <SectionContainer2>
-        {list.map((name, index) => {
+        {list.map((data, index) => {
           return (
             <ContentLineContainer key={index}>
-              <ContentTitle2>{name}</ContentTitle2>
+              <ContentTitle2>{data.name}</ContentTitle2>
               <Desc>단어, 문장, 블럭으로 공부해요.</Desc>
               <ContentListContainer>
                 <ContentC>
-                  <WordContent
-                    onClick={() => {
-                      setAuthModalState((prev) => ({
-                        ...prev,
-                        view: 'chooseLevel',
-                      }));
-                      GoWhereClick('/eng/word');
-                    }}
-                  >
+                  <WordContent onClick={data.openLevelClickWord}>
                     <ContentContainer>
-                      <ContentTitle>단어 맞추기</ContentTitle>
-                      <Illustration
-                        WidthValue={8}
-                        marginTop={6}
-                        marginRight={0}
-                        marginBottom={0}
-                        marginLeft={4}
-                        Rotate={0}
-                        src={
-                          'https://cdn.discordapp.com/attachments/1054718420651872266/1069268172328419359/Frame_2.png'
-                        }
-                      />
+                      <ContentTitle>{data.word}</ContentTitle>
+                      {data.wordImg !== '' ? (
+                        <Illustration
+                          alt="단어 일러스트"
+                          WidthValue={8}
+                          marginTop={6}
+                          marginRight={0}
+                          marginBottom={0}
+                          marginLeft={4}
+                          Rotate={0}
+                          src={data.wordImg}
+                        />
+                      ) : (
+                        <></>
+                      )}
                     </ContentContainer>
                   </WordContent>
                   <Margin marginRem={0.5} />
-                  <SentenceContent
-                    onClick={() => {
-                      setAuthModalState((prev) => ({
-                        ...prev,
-                        view: 'chooseLevel',
-                      }));
-                      GoWhereClick('/eng/sentence');
-                    }}
-                  >
+                  <SentenceContent onClick={data.openLevelClickSen}>
                     <ContentContainer>
-                      <ContentTitle>문장 맞추기</ContentTitle>
-                      <Illustration
-                        WidthValue={15}
-                        marginTop={6}
-                        marginRight={0}
-                        marginBottom={0}
-                        marginLeft={0}
-                        Rotate={345}
-                        src={
-                          'https://cdn.discordapp.com/attachments/1054718420651872266/1069490768093397012/Frame_3-removebg-preview.png'
-                        }
-                      />
+                      <ContentTitle>{data.sentence}</ContentTitle>
+                      {data.sentenceImg !== '' ? (
+                        <Illustration
+                          alt="문장 일러스트"
+                          WidthValue={15}
+                          marginTop={6}
+                          marginRight={0}
+                          marginBottom={0}
+                          marginLeft={0}
+                          Rotate={345}
+                          src={data.sentenceImg}
+                        />
+                      ) : (
+                        <></>
+                      )}
                     </ContentContainer>
                   </SentenceContent>
                   <Margin marginRem={0.5} />
-                  <Content2
-                    onClick={() => {
-                      setAuthModalState((prev) => ({
-                        ...prev,
-                        view: 'chooseLevel',
-                      }));
-                      GoWhereClick('/eng/mean');
-                    }}
-                  >
+                  <Content2 onClick={data.openLevelClickWrite}>
                     <ContentContainer>
-                      <ContentTitle>영작하기</ContentTitle>
+                      <ContentTitle>{data.write}</ContentTitle>
                     </ContentContainer>
                   </Content2>
                 </ContentC>
@@ -154,7 +187,10 @@ const HomePage: NextPage = () => {
 export default HomePage;
 
 import styled from '@emotion/styled';
-import { installModalState } from '../atoms/appInstallAtom';
+import {
+  AppInstallModalState,
+  installModalState,
+} from '../atoms/appInstallAtom';
 import { InstallAdvise } from '../components';
 import Seo from '../components/Seo';
 
