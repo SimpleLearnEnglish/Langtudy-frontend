@@ -16,7 +16,7 @@ export const InstallAdvise: React.FC<CloseFunction> = ({
   PCIcon,
 }) => {
   return (
-    <S.ModalWarp onClick={handleClose}>
+    <S.ModalWarp>
       <S.ModalContainer>
         <S.CloseIconContainer>
           <S.CloseIcon onClick={handleClose}>
@@ -26,13 +26,13 @@ export const InstallAdvise: React.FC<CloseFunction> = ({
         </S.CloseIconContainer>
         <S.IconBoxContainer>
           <S.IconsBox>
-            <S.IosInstallWay src={IosIcon} />
+            <S.IosInstallWay alt="ios 설치방법" src={IosIcon} />
           </S.IconsBox>
           <S.IconsBox>
-            <S.InstallWay src={AndroidIcon} />
+            <S.InstallWay alt="안드롭이드 설치방법" src={AndroidIcon} />
           </S.IconsBox>
           <S.IconsBox>
-            <S.InstallWay src={PCIcon} />
+            <S.InstallWay alt="PC버전 설치방법" src={PCIcon} />
           </S.IconsBox>
         </S.IconBoxContainer>
         <S.AdviseInstallText>
