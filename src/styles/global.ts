@@ -18,7 +18,13 @@ export const globalStyle = css`
 
   * {
     box-sizing: border-box;
-    font-family: 'Pretendard';
+  }
+  #__next {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system,
+      BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+      'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    letter-spacing: -0.03em;
   }
   html {
     color: #fff;
@@ -32,6 +38,9 @@ export const globalStyle = css`
     letter-spacing: -0.05rem;
     color: var(--color-text-primary);
     background-color: var(--color-background);
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
   .outer {
     height: 100vh;
