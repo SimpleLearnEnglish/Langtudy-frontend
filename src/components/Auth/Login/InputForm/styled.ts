@@ -9,7 +9,7 @@ export const AuthContainer = styled.div`
   &:focus-within {
     background: rgba(0, 0, 0, 0.06);
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 768px) {
     margin: 3rem auto 0 auto;
   }
 `;
