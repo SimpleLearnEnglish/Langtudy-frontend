@@ -113,7 +113,13 @@ const LevelPage: React.FC = () => {
               easy.length === 1 ? (
                 <LoadingStyle>Loading...</LoadingStyle>
               ) : QuizN >= easy.length ? (
-                <div>all solved</div>
+                <AllSolved>
+                  <AllSolvedText>문제를 다 풀었어요👏</AllSolvedText>
+                  <AllSolvedDesc>
+                    추가하고 싶은 뜻과 문장이 있다면{' '}
+                    <AllSolvedPoint>클릭</AllSolvedPoint>
+                  </AllSolvedDesc>
+                </AllSolved>
               ) : (
                 <Easy
                   dataSets={easy}
@@ -127,7 +133,13 @@ const LevelPage: React.FC = () => {
               normal.length === 1 ? (
                 <LoadingStyle>Loading...</LoadingStyle>
               ) : QuizN >= normal.length ? (
-                <div>all solved</div>
+                <AllSolved>
+                  <AllSolvedText>문제를 다 풀었어요👏</AllSolvedText>
+                  <AllSolvedDesc>
+                    추가하고 싶은 뜻과 문장이 있다면{' '}
+                    <AllSolvedPoint>클릭</AllSolvedPoint>
+                  </AllSolvedDesc>
+                </AllSolved>
               ) : (
                 <Normal
                   dataSets={normal}
@@ -141,7 +153,13 @@ const LevelPage: React.FC = () => {
               hard.length === 1 ? (
                 <LoadingStyle>Loading...</LoadingStyle>
               ) : QuizN >= hard.length ? (
-                <div>all solved</div>
+                <AllSolved>
+                  <AllSolvedText>문제를 다 풀었어요👏</AllSolvedText>
+                  <AllSolvedDesc>
+                    추가하고 싶은 뜻과 문장이 있다면{' '}
+                    <AllSolvedPoint>클릭</AllSolvedPoint>
+                  </AllSolvedDesc>
+                </AllSolved>
               ) : (
                 <Hard
                   dataSets={hard}
@@ -183,6 +201,12 @@ const LevelPage: React.FC = () => {
 export default LevelPage;
 
 import styled from '@emotion/styled';
+import {
+  AllSolved,
+  AllSolvedDesc,
+  AllSolvedPoint,
+  AllSolvedText,
+} from '../../../mean/level/[id]';
 
 export const LevelPageContainer = styled.div`
   //shape
