@@ -5,9 +5,9 @@ export const LoginMainContainer = styled.div`
   width: 70%;
   padding-top: 5rem;
   margin-top: 12rem;
-  @media screen and (max-width: 400px) {
-    margin: 0;
-    width: 100%;
+  @media screen and (max-width: 768px) {
+    margin: 0 auto 0 auto;
+    width: 95%;
   }
 `;
 export const LoginTitleContainer = styled.div``;
@@ -18,8 +18,8 @@ export const LoginTitle = styled.div`
   font-size: 2.6rem;
   letter-spacing: 0.1rem;
   margin-left: 4rem;
-  @media screen and (max-width: 400px) {
-    margin: 0 0 0 1rem;
+  @media screen and (max-width: 768px) {
+    margin: 0;
   }
 `;
 
@@ -31,8 +31,8 @@ export const LoginDescription = styled.div`
   color: rgba(0, 0, 0, 0.4);
   font-size: 1.6rem;
   margin-left: 4rem;
-  @media screen and (max-width: 400px) {
-    margin: 0 0 0 1rem;
+  @media screen and (max-width: 768px) {
+    margin: 0;
   }
 `;
 
