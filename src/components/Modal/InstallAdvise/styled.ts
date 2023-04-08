@@ -114,11 +114,13 @@ export const IconsBox = styled.div`
 `;
 export const IosInstallWay = styled.img`
   width: 35%;
+  height: 40%;
   margin: auto;
 `;
 
 export const InstallWay = styled.img`
   width: 45%;
+  height: 45%;
   margin: auto;
 `;
 
