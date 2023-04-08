@@ -40,7 +40,7 @@ const RegisterPage: NextPage = () => {
 
   return (
     <RegisterBackground>
-      <RegisteradAdjustment>
+      <RegisterAdjustment>
         <Register />
         <RegisterForm onSubmit={OnSubmit}>
           <RegisterInput
@@ -84,7 +84,7 @@ const RegisterPage: NextPage = () => {
           Height={2.7}
           SignGoogle={signInWithGoogle}
         />
-      </RegisteradAdjustment>
+      </RegisterAdjustment>
     </RegisterBackground>
   );
 };
@@ -106,7 +106,7 @@ export const RegisterBackground = styled.div`
   }
 `;
 
-export const RegisteradAdjustment = styled.div`
+export const RegisterAdjustment = styled.div`
   margin-left: 20vw;
   margin-top: 10vw;
   @media screen and (max-width: 900px) {
@@ -155,7 +155,7 @@ export const OtherOptionText = styled(Link)`
   margin-left: 2.7rem;
   user-select: none;
   text-decoration: none;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 768px) {
     margin: 0 0 0 2rem;
   }
   :hover {
