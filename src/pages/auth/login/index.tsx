@@ -25,7 +25,6 @@ const LoginPage: NextPage = () => {
   const isMobile = useMediaQuery({
     query: '(max-width: 768px)',
   });
-  console.log(isMobile);
   const setAuthModalState = useSetRecoilState(authModalState);
   const [userEmail, setUserEmail] = useState('');
   const [userPw, setUserPw] = useState('');
