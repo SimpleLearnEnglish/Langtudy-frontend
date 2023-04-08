@@ -2,6 +2,7 @@ import { AuthBottom } from '@/src/components/Auth/Bottom';
 import { Login } from '@/src/components/Auth/Login/Form';
 import { LoginInput } from '@/src/components/Auth/Login/InputForm';
 import React, { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import {
   useAuthState,
@@ -14,20 +15,24 @@ import { useRouter } from 'next/router';
 
 //modal
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { authModalState } from '@/src/atoms/authModalAtom';
+import { AuthModalState, authModalState } from '@/src/atoms/authModalAtom';
 import ResetPassword from '@/src/components/Modal/ResetPassword';
 
 import { SocialButton } from '@/src/components/Auth';
 import { NextPage } from 'next';
 
 const LoginPage: NextPage = () => {
+  const isMobile = useMediaQuery({
+    query: '(max-width: 768px)',
+  });
+  console.log(isMobile);
   const setAuthModalState = useSetRecoilState(authModalState);
   const [userEmail, setUserEmail] = useState('');
   const [userPw, setUserPw] = useState('');
   const [modalState, setModalState] = useRecoilState(authModalState);
   const [formError, setFormError] = useState('');
   const handleClose = () =>
-    setModalState((prev) => ({
+    setModalState((prev: AuthModalState) => ({
       ...prev,
       view: 'default',
       open: false,
@@ -75,14 +80,14 @@ const LoginPage: NextPage = () => {
           </ErrorMessage>
           <LoginButton type="submit">로그인</LoginButton>
         </LoginForm>
-        <AuthBottom StyledMarinLeft={4} />
+        <AuthBottom StyledMarinLeft={isMobile ? 0 : 4} />
         <OneLineFlex>
           <OtherOptionText href={'/auth/register'}>
             계정이 없으신가요?
           </OtherOptionText>
           <LostPw
             onClick={() =>
-              setAuthModalState((prev) => ({
+              setAuthModalState((prev: AuthModalState) => ({
                 ...prev,
                 view: 'resetPassword',
               }))
