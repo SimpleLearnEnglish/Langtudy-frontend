@@ -38,7 +38,7 @@ const Menu: React.FC<AuthLink> = ({
           </S.RightContainer>
         ) : (
           <S.RightContainer>
-            <S.DoAuthContainer href={LoginUrl}>
+            <S.DoAuthContainer aria-label="로그인" href={LoginUrl}>
               <S.DoAuthHead />
               <S.DoAuthBody />
             </S.DoAuthContainer>
