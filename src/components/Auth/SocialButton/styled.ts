@@ -7,7 +7,7 @@ export const Button = styled.button<{
   width: 34.5rem;
   display: flex;
   @media screen and (max-width: 768px) {
-    margin: 0;
+    margin: auto;
   }
   ${(props) => (props.pathUrl === 'login' ? 'margin-left: 4rem' : '')};
   cursor: pointer;
