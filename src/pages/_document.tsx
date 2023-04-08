@@ -63,6 +63,12 @@ export default function Document() {
           media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
         ></link>
         <meta name="theme-color" content="#f4f4f4"></meta>
+        <link
+          rel="stylesheet"
+          as="style"
+          crossOrigin=""
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+        />
       </Head>
       <body>
         <Main />
