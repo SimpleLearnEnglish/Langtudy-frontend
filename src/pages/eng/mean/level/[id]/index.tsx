@@ -345,7 +345,7 @@ export const AnswerInput = styled.input`
   border-radius: 10px;
 
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
 `;
 export const AnswerCheck = styled.button`
